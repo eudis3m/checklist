@@ -53,7 +53,7 @@ import br.com.patio.projeto.entity.CheckListAutomovelEntity;
 public class RelatorioEmail  {
 	  public String from = "eudisgomes@yahoo.com.br";
 	    public String to = getTo();
-	    public String senhaMail = "189sud36";
+	    public String senhaMail = "";
 	    //@Autowired
 	    private JavaMailSender emailSender = getJavaMailSender();
 	
