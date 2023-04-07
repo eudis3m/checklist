@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.5.1  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Termo" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" whenResourceMissingType="Key" isIgnorePagination="true" uuid="d0f4453a-1b48-4e82-8cd2-2c95ef4e4a05">
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancoPatio"/>
+	<subDataset name="Dataset" uuid="ccae9d8c-4e8b-435d-8405-6754eb1c0613">
+		<field name="solicitante" class="java.lang.String"/>
+		<field name="proprietario" class="java.lang.String"/>
+		<field name="ano" class="java.lang.String"/>
+		<field name="guincho" class="java.lang.String"/>
+		<field name="id" class="java.lang.Integer"/>
+		<field name="saida" class="java.lang.String"/>
+		<field name="nome" class="java.lang.String"/>
+		<field name="rg" class="java.lang.String"/>
+		<field name="ssp" class="java.lang.String"/>
+		<field name="CNH" class="java.lang.String"/>
+		<field name="categoria" class="java.lang.String"/>
+		<field name="placa" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="placa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select a.entrada , r.*
+from  bancopatio.checklist_automovel a,
+bancopatio.checklist_motocicleta m,
+ bancopatio.retiraveiculo r
+ where a.placa LIKE  $P{placa} 
+ and m.placa LIKE  $P{placa} 
+ and  r.placa like  $P{placa}]]>
+	</queryString>
+	<field name="saida" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="saida"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="rg" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rg"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="ssp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ssp"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="cnh" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cnh"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="categoria" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="categoria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="placa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="total"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="diaria" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="diaria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<field name="assinatura" class="java.lang.Object">
+		<property name="com.jaspersoft.studio.field.label" value="assinatura"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="retiraveiculo"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="480" splitType="Stretch">
+			<rectangle>
+				<reportElement x="10" y="10" width="535" height="470" uuid="4f1593c1-43b0-4387-a901-1a91c683f672"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="70" y="40" width="44" height="15" uuid="51961d51-b341-44eb-8997-1eb3bd9091a8"/>
+				<text><![CDATA[Saida:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="40" width="100" height="13" uuid="ff27b23c-3a69-4734-8a1e-539fd2a49c49"/>
+				<textFieldExpression><![CDATA[$F{saida}  == null ? " " : $F{saida}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="68" width="50" height="20" uuid="6a640ab6-7bea-4596-8ba5-677823456872"/>
+				<text><![CDATA[Guincho: ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="100" width="52" height="20" uuid="f9fe9a66-c47a-469b-943e-ae7ebcfbf154"/>
+				<text><![CDATA[Estadia:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="134" y="101" width="100" height="19" uuid="9e30f199-7756-495e-9733-0baaf265b965"/>
+				<text><![CDATA[R$ 47,33]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="160" width="60" height="19" uuid="46a94725-536f-45b0-9371-31d585e503b1"/>
+				<text><![CDATA[Valor Total:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="190" width="36" height="20" uuid="ceb022d5-d28a-45c6-b8f4-1e961082baf0"/>
+				<text><![CDATA[Eu: ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="112" y="190" width="196" height="20" uuid="705ae0d5-1c86-43c6-839e-610079f5c9aa"/>
+				<textFieldExpression><![CDATA[$F{nome}  == null ? " " : $F{nome}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="223" width="80" height="25" uuid="bd720bc6-20ba-4f3c-8d41-dcbd4b92ca12"/>
+				<text><![CDATA[Portador do RG:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="223" width="100" height="27" uuid="cdf38053-5ccf-4538-ad57-9a9fb7610d4f"/>
+				<textFieldExpression><![CDATA[$F{rg} == null ? " " : $F{rg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="220" width="70" height="23" uuid="7e4f27b7-6650-4d2c-a6e6-022f65f6250a"/>
+				<textFieldExpression><![CDATA[$F{ssp} == null ?  " " : $F{ssp}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="260" width="80" height="30" uuid="b29e59e9-dbdd-4c02-b2f8-a6f98e9eead1"/>
+				<text><![CDATA[CNH Nº Registro:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="382" y="220" width="30" height="24" uuid="c48292e9-bcb7-4c76-8f3d-1c9ba7f392ae"/>
+				<text><![CDATA[SSP:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="157" y="260" width="100" height="22" uuid="b51c2a6f-13cc-4b89-be02-d5238f143551"/>
+				<textFieldExpression><![CDATA[$F{cnh} == null ? " " : $F{cnh}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="360" y="260" width="52" height="23" uuid="aff3c573-5c22-4d85-a821-67d86962ea1f"/>
+				<text><![CDATA[Categoria:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="412" y="260" width="70" height="20" uuid="41056f37-90f3-4d62-9fd4-a757535d3cc5"/>
+				<textFieldExpression><![CDATA[$F{categoria} == null ? " "  : $F{categoria}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="70" y="300" width="430" height="30" uuid="a33efa06-18b5-4b2b-9edc-b075f5b17794"/>
+				<text><![CDATA[Estou retirando  este veiculo aqui neste patio de apreensão no mesmo estado em que deu
+entrada portanto nada tenho a reclamar no presente.
+e no futuro. Por ser expressão de verdade firmo a
+presente declaração.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="350" width="77" height="26" uuid="7013e628-c9da-482a-b03a-c1b8e894ed1d"/>
+				<text><![CDATA[Tres Marias ]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="190" y="420" width="240" height="16" uuid="483dd248-6d85-48dc-a03d-caaea5882560"/>
+				<textFieldExpression><![CDATA[$F{assinatura} == null ? " " : $F{assinatura}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="76" y="430" width="100" height="20" uuid="a67e7133-afaf-4d23-9f2f-feddd61615ab"/>
+				<text><![CDATA[Liberado no patio por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="183" y="425" width="317" height="25" uuid="afccf065-6ab9-47d0-b83f-ea10e9b32c9d"/>
+				<text><![CDATA[_____________________________________________]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="160" width="100" height="19" uuid="b3e2a6cb-803a-446b-99fe-740584ea5d43"/>
+				<textFieldExpression><![CDATA[new java.text.DecimalFormat("$ #,##0.00").format(Double.valueOf($F{total} != null && $F{total} > 0 ? Double.valueOf($F{total}) : 0))]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="134" y="70" width="100" height="17" uuid="18e4fac1-e8f3-4484-84b3-c0dd41a9e6f8"/>
+				<text><![CDATA[R$ 287,91]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="70" y="130" width="51" height="15" uuid="ecb209cd-ddc5-4e5f-9fc6-a6c788f60e89"/>
+				<text><![CDATA[Diarias:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="134" y="130" width="100" height="19" uuid="e9d4bd3c-f2ad-40be-9093-f74c2c161e6a"/>
+				<textFieldExpression><![CDATA[$F{diaria}  == null ? " " : $F{diaria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="157" y="350" width="77" height="26" uuid="cea787cb-1bce-42db-b19b-fe5d0b471da0"/>
+				<textFieldExpression><![CDATA[$F{saida} == null ? " " : $F{saida}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

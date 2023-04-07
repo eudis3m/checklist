@@ -1,0 +1,35 @@
+
+FROM maven:3.6.1-jdk-8-alpine
+#WORKDIR . /app
+#COPY mvnw .
+#COPY .mvn .mvn
+#COPY pom.xml .
+#COPY target/Checklist-0.0.1-SNAPSHOT.jar /app/Checklist.jar
+#RUN ["mvn", "spring-boot:run"]
+#RUN mvn package
+#RUN bash -c "touch /app/Checklist.jar"
+#COPY . /app
+EXPOSE 8082
+#ENTRYPOINT ["java", "-jar", "Checklist.jar"]
+#CMD ["mvn", "spring-boot:run"]
+CMD ["mvn", "spring-boot:build-image"]
+
+#EXPOSE 8082
+#ARG JAR_FILE=target/Checklist-0.0.1-SNAPSHOT.jar
+#ADD ${JAR_FILE} app.jar
+#ENTRYPOINT ["java", "-jar", "Checklist.jar"]
+#CMD ["mvn", "spring-boot:build-image"]
+
+USER root
+WORKDIR /api
+WORKDIR /api/Relatorio
+#RUN yum update && yum install vim telnet wget -y
+COPY target/Checklist-0.0.1-SNAPSHOT.jar /api/Checklist.jar
+
+#WORKDIR /api
+ENV TZ=America/Sao_Paulo
+RUN bash -c "touch /api/Checklist.jar"
+#RUN mvn package
+CMD $JAVA_HOME/bin/java -Duser.timezone=America/Sao_Paulo -Dspring.profiles.active=$PROFILE -Dhostname=$HOSTNAME -Dtoken=$TOKEN -server -Xms1g -Xmx2g -XX:+UseConcMarkSweepGC -XX:-UseGCOverheadLimit -jar Checklist.jar
+
+

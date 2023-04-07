@@ -1,0 +1,43 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:8.0.29
+    volumes:
+      - ./mysql:/var/lib/mysql
+  checklist:
+    image: checklist
+  alpine-ftp-server:
+    image: d2b794955c47
+    # networks:
+     #- redelocal
+    environment:
+      MYSQL_ROOT_PASSWORD: 189Sud36@
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 189Sud36@
+    restart: always
+    ports: 
+     # - 8081:8081
+      - 3306:3306
+      - 8082:8082
+  nginx:
+    build:
+      context: .
+      #target: runtime-nginx
+      dockerfile: nginx/Dockerfile
+    image: nginx
+   #networks:
+    # - redelocal
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./:/etc/nginx
+
+      
+ #networks:
+  # redelocal:
+    # driver: bridge
+
+
+      
+      
+ 

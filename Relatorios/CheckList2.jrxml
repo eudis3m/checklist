@@ -1,0 +1,1773 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CheckList" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" whenResourceMissingType="Empty" isIgnorePagination="true" uuid="3b3857d2-b866-415f-a12f-c9651d971459">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.jasperserver.url" value="http://localhost:8081/jasperserver/services/repository/"/>
+	<property name="ireport.jasperserver.user" value="jasperadmin"/>
+	<property name="ireport.jasperserver.report.resource" value="/ContentFiles/pdf/CheckList_test345_files/main_jrxml"/>
+	<property name="ireport.jasperserver.reportUnit" value="/ContentFiles/pdf/CheckList_test345"/>
+	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
+	<property name="net.sf.jasperreports.export.csv.field.delimiter"/>
+	<property name="net.sf.jasperreports.data.adapter" value="DataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="target\classes\DataAdapter.xml"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<import value="net.sf.jasperreports.engine.data.JRBeanCollectionDataSource"/>
+	<style name="table">
+		<box>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 1_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TH" mode="Opaque" backcolor="#F0F8FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_CH" mode="Opaque" backcolor="#BFE1FF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="table 2_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<subDataset name="Table Dataset 1" whenResourceMissingType="Empty" uuid="373f5c42-6bac-4605-a68b-741faa616dfb">
+		<property name="net.sf.jasperreports.data.adapter" value="DataAdapter.xml"/>
+		<parameter name="Placa" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT listaveiculos.solicitante,
+	listaveiculos.proprietario,
+	listaveiculos.veiculo,
+	listaveiculos.chassi,
+	listaveiculos.local,
+	listaveiculos.`atravesDE`,
+	listaveiculos.telefone,
+	listaveiculos.ano,
+	listaveiculos.renavam,
+	listaveiculos.bairro,
+	listaveiculos.guincho,
+	listaveiculos.cpf_cnpj,
+	listaveiculos.cor,
+	listaveiculos.produto,
+	listaveiculos.cidade,
+	listaveiculos.placa,
+	listaveiculos.uf
+FROM checklist,
+	listaveiculos,
+	vistoria
+WHERE
+ checklist.placa_2 = listaveiculos.placa
+	 AND checklist.placa_2 = vistoria.placa3
+	 AND vistoria.placa3 = listaveiculos.placa
+	AND listaveiculos.placa  =  $P{Placa}]]>
+		</queryString>
+		<field name="solicitante" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="proprietario" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="veiculo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="chassi" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="local" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="atravesDE" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="telefone" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="ano" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="renavam" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="bairro" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="guincho" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="cpf_cnpj" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="cor" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="produto" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="cidade" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="placa" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="uf" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Table Dataset 2" whenResourceMissingType="Empty" uuid="89b52437-1770-4760-acc9-f7b7cd77418f">
+		<property name="net.sf.jasperreports.data.adapter" value="DataAdapter.xml"/>
+		<parameter name="Placa" class="java.lang.String"/>
+		<queryString>
+			<![CDATA[SELECT vistoria.documento,
+	vistoria.bagagito,
+	vistoria.retrovisor_eletrico,
+	vistoria.retrovisor_comum,
+	vistoria.borrachao_lateral,
+	vistoria.break_light,
+	vistoria.farois_auxiliares,
+	vistoria.roda_comuns,
+	vistoria.rodas_de_liga,
+	vistoria.radio_toca_cds,
+	vistoria.amplificador,
+	vistoria.banco_dianteiro,
+	vistoria.banco_traseiro,
+	vistoria.tapetes,
+	vistoria.protetor_carter,
+	vistoria.extintor,
+	vistoria.triangulo,
+	vistoria.console_interno,
+	vistoria.buzinas,
+	vistoria.bateria,
+	vistoria.macaco,
+	vistoria.chave_de_roda,
+	vistoria.calotas,
+	vistoria.alarme,
+	vistoria.placa3
+FROM checklist,
+	listaveiculos,
+	vistoria
+WHERE
+    checklist.placa_2 = listaveiculos.placa
+	 AND checklist.placa_2 = vistoria.placa3
+	 AND vistoria.placa3 = listaveiculos.placa
+	AND vistoria.placa3 =  $P{Placa}]]>
+		</queryString>
+		<field name="documento" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="bagagito" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="retrovisor_eletrico" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="retrovisor_comum" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="borrachao_lateral" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="break_light" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="farois_auxiliares" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="roda_comuns" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="rodas_de_liga" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="radio_toca_cds" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="amplificador" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="banco_dianteiro" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="banco_traseiro" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="tapetes" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="protetor_carter" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="extintor" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="triangulo" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="console_interno" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="buzinas" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="bateria" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="macaco" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="chave_de_roda" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="calotas" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+		<field name="alarme" class="java.lang.String">
+			<fieldDescription><![CDATA[]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset" whenResourceMissingType="Empty" uuid="44c2955b-331c-44da-bedf-c08706f23430">
+		<property name="net.sf.jasperreports.data.adapter" value="DataAdapter.xml"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="Placa" class="java.lang.String" nestedType=""/>
+		<queryString>
+			<![CDATA[Select  *
+ from bancopatio.checklist_spring 
+ where
+checklist_spring .placa = $P{Placa}]]>
+		</queryString>
+		<field name="oid" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="oid"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="capo" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="capo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="parabrisa" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="parabrisa"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_dir" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_dir"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farol_dir" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farol_dir"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="lateral_tras" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="lateral_tras"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_tras_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_tras_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="porta_tras_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="porta_tras_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="porta_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="porta_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farol_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farol_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="seta_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="seta_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="para_choque" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="para_choque"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farolete_dir" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farolete_dir"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farolete_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farolete_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_tras" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_tras"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="traseira" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="traseira"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="tam_porta_malas" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="tam_porta_malas"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_tras2" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_tras2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="teto" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="teto"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="capo2" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="capo2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="roda_tras_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="roda_tras_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="roda_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="roda_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="lateral_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="lateral_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="observacao" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="observacao"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="solicitante" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="solicitante"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="proprietario" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="proprietario"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="veiculo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="veiculo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="chassi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="chassi"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="local" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="local"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="atravesDE" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="atravesDE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="telefone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="ano" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="ano"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="renavam" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="renavam"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="bairro" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bairro"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="guincho" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="guincho"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="cpf_cnpj" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="cpf_cnpj"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="cor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="cor"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="produto" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="produto"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="cidade" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="cidade"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="placa" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="placa"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="uf" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="uf"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="documento" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="documento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="bagagito" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bagagito"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_eletrico" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_eletrico"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_comum" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_comum"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="borrachao_lateral" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="borrachao_lateral"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="break_light" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="break_light"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farois_auxiliares" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="farois_auxiliares"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="roda_comuns" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="roda_comuns"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="rodas_de_liga" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="rodas_de_liga"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="radio_toca_cds" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="radio_toca_cds"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="amplificador" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="amplificador"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="banco_dianteiro" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="banco_dianteiro"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="banco_traseiro" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="banco_traseiro"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="tapetes" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="tapetes"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="protetor_carter" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="protetor_carter"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="extintor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="extintor"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="triangulo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="triangulo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="console_interno" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="console_interno"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="buzinas" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="buzinas"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="bateria" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bateria"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="macaco" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="macaco"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="chave_de_roda" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="chave_de_roda"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="calotas" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="calotas"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="alarme" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="alarme"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="DT_CADASTRO" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="DT_CADASTRO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="DT_ALTERACAO" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="DT_ALTERACAO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="OID_USUARIO_CADASTRO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="OID_USUARIO_CADASTRO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="OID_USUARIO_ALTERACAO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="OID_USUARIO_ALTERACAO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="ID_ATIVO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="ID_ATIVO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+	</subDataset>
+	<subDataset name="Dataset1" whenResourceMissingType="Empty" uuid="96135fe6-6229-4a60-b0ea-54c7f37bf76c">
+		<property name="net.sf.jasperreports.data.adapter" value="DataAdapter.xml"/>
+		<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+		<parameter name="Placa" class="java.lang.String"/>
+		<queryString language="SQL">
+			<![CDATA[Select  *
+ from bancopatio.checklist_spring 
+ where
+checklist_spring .placa = $P{Placa}]]>
+		</queryString>
+		<field name="oid" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="oid"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="capo" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="capo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="parabrisa" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="parabrisa"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_dir" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_dir"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farol_dir" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farol_dir"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="lateral_tras" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="lateral_tras"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_tras_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_tras_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="porta_tras_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="porta_tras_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="porta_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="porta_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farol_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farol_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="seta_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="seta_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="para_choque" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="para_choque"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farolete_dir" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farolete_dir"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farolete_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="farolete_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_tras" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_tras"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="traseira" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="traseira"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="tam_porta_malas" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="tam_porta_malas"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="vidro_tras2" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="vidro_tras2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="teto" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="teto"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="capo2" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="capo2"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="roda_tras_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="roda_tras_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="roda_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="roda_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="lateral_diant_esq" class="java.lang.Integer">
+			<property name="com.jaspersoft.studio.field.label" value="lateral_diant_esq"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="observacao" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="observacao"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="solicitante" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="solicitante"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="proprietario" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="proprietario"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="veiculo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="veiculo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="chassi" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="chassi"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="local" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="local"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="atravesDE" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="atravesDE"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="telefone" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="ano" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="ano"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="renavam" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="renavam"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="bairro" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bairro"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="guincho" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="guincho"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="cpf_cnpj" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="cpf_cnpj"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="cor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="cor"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="produto" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="produto"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="cidade" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="cidade"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="placa" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="placa"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="uf" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="uf"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="documento" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="documento"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="bagagito" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bagagito"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_eletrico" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_eletrico"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="retrovisor_comum" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="retrovisor_comum"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="borrachao_lateral" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="borrachao_lateral"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="break_light" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="break_light"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="farois_auxiliares" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="farois_auxiliares"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="roda_comuns" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="roda_comuns"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="rodas_de_liga" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="rodas_de_liga"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="radio_toca_cds" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="radio_toca_cds"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="amplificador" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="amplificador"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="banco_dianteiro" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="banco_dianteiro"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="banco_traseiro" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="banco_traseiro"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="tapetes" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="tapetes"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="protetor_carter" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="protetor_carter"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="extintor" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="extintor"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="triangulo" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="triangulo"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="console_interno" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="console_interno"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="buzinas" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="buzinas"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="bateria" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="bateria"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="macaco" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="macaco"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="chave_de_roda" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="chave_de_roda"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="calotas" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="calotas"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="alarme" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="alarme"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="DT_CADASTRO" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="DT_CADASTRO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="DT_ALTERACAO" class="java.sql.Timestamp">
+			<property name="com.jaspersoft.studio.field.label" value="DT_ALTERACAO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="OID_USUARIO_CADASTRO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="OID_USUARIO_CADASTRO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="OID_USUARIO_ALTERACAO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="OID_USUARIO_ALTERACAO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+		<field name="ID_ATIVO" class="java.lang.String">
+			<property name="com.jaspersoft.studio.field.label" value="ID_ATIVO"/>
+			<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+		</field>
+	</subDataset>
+	<parameter name="Placa" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select  *
+ from bancopatio.checklist_spring 
+ where
+checklist_spring .placa = $P{Placa}]]>
+	</queryString>
+	<field name="oid" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="oid"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="capo" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="capo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="parabrisa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="parabrisa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="retrovisor_dir" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="retrovisor_dir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="farol_dir" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="farol_dir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="lateral_tras" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="lateral_tras"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="vidro_tras_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="vidro_tras_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="porta_tras_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="porta_tras_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="vidro_diant_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="vidro_diant_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="porta_diant_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="porta_diant_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="farol_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="farol_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="retrovisor_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="retrovisor_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="seta_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="seta_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="para_choque" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="para_choque"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="farolete_dir" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="farolete_dir"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="farolete_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="farolete_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="vidro_tras" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="vidro_tras"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="traseira" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="traseira"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="tam_porta_malas" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="tam_porta_malas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="vidro_tras2" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="vidro_tras2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="teto" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="teto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="capo2" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="capo2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="roda_tras_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="roda_tras_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="roda_diant_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="roda_diant_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="lateral_diant_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="lateral_diant_esq"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="observacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="observacao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="solicitante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="solicitante"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="proprietario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="proprietario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="veiculo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="veiculo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="chassi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="chassi"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="local" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="local"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="atravesDE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="atravesDE"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="telefone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="telefone"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="ano" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ano"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="renavam" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="renavam"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="bairro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bairro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="guincho" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="guincho"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="cpf_cnpj" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cpf_cnpj"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="cor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="produto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="produto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="cidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cidade"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="placa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="placa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="uf" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="uf"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="documento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="documento"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="bagagito" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bagagito"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="retrovisor_eletrico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="retrovisor_eletrico"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="retrovisor_comum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="retrovisor_comum"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="borrachao_lateral" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="borrachao_lateral"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="break_light" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="break_light"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="farois_auxiliares" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="farois_auxiliares"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="roda_comuns" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="roda_comuns"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="rodas_de_liga" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="rodas_de_liga"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="radio_toca_cds" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="radio_toca_cds"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="amplificador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="amplificador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="banco_dianteiro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="banco_dianteiro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="banco_traseiro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="banco_traseiro"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="tapetes" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tapetes"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="protetor_carter" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="protetor_carter"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="extintor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="extintor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="triangulo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="triangulo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="console_interno" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="console_interno"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="buzinas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="buzinas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="bateria" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="bateria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="macaco" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="macaco"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="chave_de_roda" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="chave_de_roda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="calotas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="calotas"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="alarme" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="alarme"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="DT_CADASTRO" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_CADASTRO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="DT_ALTERACAO" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="DT_ALTERACAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="OID_USUARIO_CADASTRO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="OID_USUARIO_CADASTRO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="OID_USUARIO_ALTERACAO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="OID_USUARIO_ALTERACAO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<field name="ID_ATIVO" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ID_ATIVO"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_spring"/>
+	</field>
+	<title>
+		<band height="180" splitType="Prevent">
+			<elementGroup/>
+			<componentElement>
+				<reportElement key="table 1" style="table 1" x="7" y="10" width="540" height="160" uuid="b96925e2-1bce-4fea-b328-4cae55ebe1be">
+					<propertyExpression name="net.sf.jasperreports.export.pdf.tag.table"><![CDATA[$P{Placa}]]></propertyExpression>
+				</reportElement>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="Dataset" uuid="c7990e75-803c-4cfb-a525-6fc7c3f401f7">
+						<datasetParameter name="Placa">
+							<datasetParameterExpression><![CDATA[$P{Placa}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="146" uuid="10b865f2-e207-4291-bbfd-45a40e0dede0">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1"/>
+						<jr:tableFooter style="table 1_TH" height="31" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="16" uuid="460dedde-eccc-4179-b999-8f18d907c168"/>
+								<text><![CDATA[Ano]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="16" width="146" height="15" uuid="28633751-794a-4d9c-89ac-ab084df4761a"/>
+								<textFieldExpression><![CDATA[$F{ano}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="15" uuid="154281e3-daa9-4d4f-8921-76db635438c6"/>
+								<text><![CDATA[Veiculo:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="146" height="15" uuid="4de4edf5-389a-42df-b5ff-a6dadddfb8e0"/>
+								<textFieldExpression><![CDATA[$F{veiculo}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="15" uuid="01dd35cd-e869-44de-ba2c-4521ac040588"/>
+								<text><![CDATA[Placa:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="146" height="15" uuid="6a7ddbc7-50ef-4ad8-87ff-5ab221c0d330"/>
+								<textFieldExpression><![CDATA[$F{placa}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 1_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="15" uuid="bee4e5b6-6358-4769-9b43-e5e68146dfce"/>
+								<text><![CDATA[Chassi:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="146" height="15" uuid="764ba20e-7bf5-4741-9457-5a4274d41271"/>
+								<textFieldExpression><![CDATA[$F{chassi}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="146" uuid="c0d9d6f3-3136-4bde-804a-f7548a0b3d5d">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="15" uuid="f2c204e7-4600-41db-8f3a-4f9becdc2b6e"/>
+								<text><![CDATA[Solicitante]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="146" height="15" uuid="e911fbec-8eea-49df-8567-10b2252d08a4"/>
+								<textFieldExpression><![CDATA[$F{solicitante}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 1_TH" height="31" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="16" uuid="5b1f0bf3-06d6-4603-af5f-c58089f1c7e0"/>
+								<text><![CDATA[Cor:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="16" width="146" height="15" uuid="679a854e-8e63-45f6-a282-1838b6684d23"/>
+								<textFieldExpression><![CDATA[$F{cor}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="15" uuid="e112ee9a-da4c-4040-824e-d6c32e1e4219"/>
+								<text><![CDATA[Proprietario:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="146" height="15" uuid="e45c6049-94f8-4032-ba1d-b1a4ec0c31ed"/>
+								<textFieldExpression><![CDATA[$F{proprietario}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="15" uuid="4cb8e453-5630-4a03-ac7e-77ea5126177a"/>
+								<text><![CDATA[Telefone:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="146" height="15" uuid="4fcaad5e-f020-45f8-b468-a8947cd8f85e"/>
+								<textFieldExpression><![CDATA[$F{telefone}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 1_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="146" height="15" uuid="95b3032d-34e3-4774-abea-3f9f10b9e24c"/>
+								<text><![CDATA[CPF/CNPJ:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="146" height="15" uuid="db7f3f9d-888d-4749-b73e-ff8b5fedba9e"/>
+								<textFieldExpression><![CDATA[$F{cpf_cnpj}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="124" uuid="fa70e450-7a32-48e5-8939-213b1fbe1e99">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="15" uuid="12aac5ae-6c85-42bc-8ce4-560e6238e6f8"/>
+								<text><![CDATA[Atraves De:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="124" height="15" uuid="96b5c5bc-ccc4-442d-88cb-ea574ab23b36"/>
+								<textFieldExpression><![CDATA[$F{atravesDE}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 1_TH" height="31" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="16" uuid="fc854a14-ecb3-4c0b-9dde-9bb892f2f9e2"/>
+								<text><![CDATA[UF:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="16" width="124" height="15" uuid="4ffba75d-bd8c-4f78-92b8-5fe5d07a277f"/>
+								<textFieldExpression><![CDATA[$F{uf}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="15" uuid="85c53e78-a8bd-4f3f-80b6-c60e7fe05b31"/>
+								<text><![CDATA[Guicho:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="124" height="15" uuid="e281d3db-0fc0-4f93-9eb6-99eb779b241a"/>
+								<textFieldExpression><![CDATA[$F{guincho}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="15" uuid="ef84055c-5dce-4b52-80c3-05d42d5b2bf9"/>
+								<text><![CDATA[Cidade:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="124" height="15" uuid="faed91b6-7c1c-46ac-b817-5863e0714d76"/>
+								<textFieldExpression><![CDATA[$F{cidade}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 1_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="15" uuid="362e0da2-db62-4ece-a4bc-e3085a4015ae"/>
+								<text><![CDATA[Renavam]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="124" height="15" uuid="99f993b4-90c9-4e84-8b6b-782eb6a34cda"/>
+								<textFieldExpression><![CDATA[$F{renavam}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="124" uuid="35632f9b-35f9-4040-bf07-1e5f27dcc3f0">
+						<jr:tableHeader style="table 1_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="15" uuid="28e2d1fb-89d1-4268-bbb8-c97d1b0d235d"/>
+								<text><![CDATA[Local]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="124" height="15" uuid="0ad89258-fb16-4880-ab83-73c262e71b2d"/>
+								<textFieldExpression><![CDATA[$F{local}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 1_TH" height="31" rowSpan="1"/>
+						<jr:columnHeader style="table 1_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="15" uuid="72131e24-d75b-46cc-a616-700cf9f4838f"/>
+								<text><![CDATA[Bairro:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="124" height="15" uuid="222fbca0-2ef6-4878-8e0a-ad0381216c67"/>
+								<textFieldExpression><![CDATA[$F{bairro}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 1_CH" height="30" rowSpan="1"/>
+						<jr:detailCell style="table 1_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="124" height="15" uuid="d00e2348-c2e3-4c10-b3cd-10a52ad56596"/>
+								<text><![CDATA[Produto:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="124" height="15" uuid="522c2010-140f-4eba-a8c4-cfde36d06141"/>
+								<textFieldExpression><![CDATA[$F{produto}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="54" splitType="Prevent">
+			<staticText>
+				<reportElement x="19" y="18" width="61" height="28" uuid="42653a83-3346-47c1-a208-a34449e63cca"/>
+				<text><![CDATA[(1) Avariado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="80" y="18" width="60" height="28" uuid="f33a44b6-7cb4-4467-9ce4-fceb29b88701"/>
+				<text><![CDATA[(2) Riscado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="140" y="18" width="50" height="28" uuid="1a95a8af-b654-4370-a120-152f9bf064da"/>
+				<text><![CDATA[(3) Falta]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="18" width="60" height="28" uuid="cdcc935a-2f59-4338-82cd-6e5c03c47fcf"/>
+				<text><![CDATA[(4) Quebrado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="250" y="18" width="60" height="28" uuid="74e6e527-d541-41de-8e35-4669c27c1a6b"/>
+				<text><![CDATA[(5) Trincado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="18" width="70" height="28" uuid="7e6af647-2039-4887-9cc7-dbd6f3a383f3"/>
+				<text><![CDATA[(6) Amassado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="18" width="110" height="28" uuid="f72e1c18-fcd0-4432-80ee-98a01583d69c"/>
+				<text><![CDATA[(7) Impossivel Vistoriar]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="295" splitType="Stretch">
+			<image>
+				<reportElement x="20" y="0" width="530" height="280" uuid="28a74267-98ac-4e92-8e66-4fcfd83bfdf1"/>
+				<imageExpression><![CDATA["veiculos2.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="450" y="4" width="23" height="20" uuid="72792a66-3a3a-47dd-a8b7-984690c68fdb"/>
+				<textFieldExpression><![CDATA[$F{capo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="40" width="22" height="17" uuid="94a9a967-a90a-43e3-861e-36917fca9e05"/>
+				<textFieldExpression><![CDATA[$F{farol_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="479" y="100" width="18" height="20" uuid="ccd33715-79ca-4aec-857c-9e0bcad1d708"/>
+				<textFieldExpression><![CDATA[$F{seta_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="484" y="128" width="24" height="14" uuid="a2f8c187-65d1-4438-91cb-7810f2459938"/>
+				<textFieldExpression><![CDATA[$F{para_choque}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="180" width="20" height="20" uuid="5e645a11-abda-43e4-9f19-184c9849eec6"/>
+				<textFieldExpression><![CDATA[$F{farolete_dir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="480" y="224" width="22" height="20" uuid="3846d885-289c-4ad7-9f96-dc73ac21f812"/>
+				<textFieldExpression><![CDATA[$F{farolete_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="460" y="256" width="24" height="14" uuid="08bb1cc2-5eb4-4b5c-a992-dd7389d69c27"/>
+				<textFieldExpression><![CDATA[$F{vidro_tras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="257" width="18" height="23" uuid="33afc870-b154-408c-8c43-0b2549c3e9b4"/>
+				<textFieldExpression><![CDATA[$F{traseira}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="256" width="23" height="14" uuid="8f0b05bf-ddb8-4ccf-ba9a-ff4f70d8707c"/>
+				<textFieldExpression><![CDATA[$F{tam_porta_malas}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="306" y="257" width="14" height="18" uuid="1d317269-1932-45f0-8a54-e14fab5f8e43"/>
+				<textFieldExpression><![CDATA[$F{vidro_tras2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="257" width="20" height="19" uuid="0263a86e-34d1-4a3b-a1a7-39cccd3aad87"/>
+				<textFieldExpression><![CDATA[$F{teto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="200" width="25" height="24" uuid="cd9f385e-9baa-454d-9726-55804acf428c"/>
+				<textFieldExpression><![CDATA[$F{capo2}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="40" y="142" width="29" height="16" uuid="b153a223-fe9b-4961-af8c-14bba7de4177"/>
+				<textFieldExpression><![CDATA[$F{roda_tras_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="107" width="27" height="19" uuid="bb0a23c3-0dfa-43af-9c8f-32b62d1ba7eb"/>
+				<textFieldExpression><![CDATA[$F{roda_diant_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="50" width="26" height="17" uuid="bf67f06b-e9da-4d1a-bb06-f320139b3054"/>
+				<textFieldExpression><![CDATA[$F{lateral_diant_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="170" y="5" width="25" height="15" uuid="41cc49e6-49e9-4456-98e7-70634b0a8587"/>
+				<textFieldExpression><![CDATA[$F{vidro_diant_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="210" y="8" width="20" height="15" uuid="b1135ae7-fb8f-48ab-891a-157c47cb08b1"/>
+				<textFieldExpression><![CDATA[$F{porta_tras_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="250" y="6" width="22" height="17" uuid="43743442-7875-4427-80b7-3db07a98d0be"/>
+				<textFieldExpression><![CDATA[$F{vidro_tras_esq}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="14" width="18" height="19" uuid="eab24348-1b9d-4785-8d49-cb148ef342d2"/>
+				<textFieldExpression><![CDATA[$F{lateral_tras}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="330" y="9" width="25" height="16" uuid="d7b28a17-f366-43f2-8ce4-fd70ac9ef0d5"/>
+				<textFieldExpression><![CDATA[$F{farol_dir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="370" y="6" width="23" height="17" uuid="ad658038-1241-49fb-a2ff-4653da7c5819"/>
+				<textFieldExpression><![CDATA[$F{retrovisor_dir}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="410" y="6" width="20" height="18" uuid="bbb417fc-0f41-4081-826e-3df18088b8c8"/>
+				<textFieldExpression><![CDATA[$F{parabrisa}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="481" y="66" width="16" height="24" uuid="a38600bb-a495-46ee-b46e-963468eda912"/>
+				<textFieldExpression><![CDATA[$F{retrovisor_esq}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<columnFooter>
+		<band height="162" splitType="Prevent">
+			<componentElement>
+				<reportElement key="table 2" style="table 2" x="5" y="0" width="545" height="150" uuid="a47076bc-8f97-4839-b76a-61dd99606f0c"/>
+				<jr:table xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" whenNoDataType="AllSectionsNoDetail">
+					<datasetRun subDataset="Dataset1" uuid="fd1c4a8f-45b3-4e06-b957-c08b28f3555d">
+						<datasetParameter name="Placa">
+							<datasetParameterExpression><![CDATA[$P{Placa}]]></datasetParameterExpression>
+						</datasetParameter>
+						<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+					</datasetRun>
+					<jr:column width="122" uuid="af7f3959-8af1-4492-a337-da1fc43da5c0">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="122" height="15" uuid="28f567d4-bd6f-49dc-bae7-6bb01a295c2f"/>
+								<text><![CDATA[Documento:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="122" height="15" uuid="10b8e80b-149f-48b2-bd97-5c1f92c856d1"/>
+								<textFieldExpression><![CDATA[$F{documento}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="122" height="15" uuid="5d5c06ba-254d-43f3-bc9a-69c8ce1d1c17"/>
+								<text><![CDATA[Borracao Lateral:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="122" height="15" uuid="fab23e87-0db4-4606-9804-6cc0472b2689"/>
+								<textFieldExpression><![CDATA[$F{borrachao_lateral}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="122" height="15" uuid="7af8f52e-061a-43d0-8777-1cd9d0eee10e"/>
+								<text><![CDATA[Bagagito:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="122" height="15" uuid="1f1b565c-df85-4b91-9e93-6c8d87076bec"/>
+								<textFieldExpression><![CDATA[$F{bagagito}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="122" height="15" uuid="0cad21fa-a39e-44b5-a837-2dfa1fb2559a"/>
+								<text><![CDATA[Retrovisor comum:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="122" height="15" uuid="d1b50f13-8616-4a8a-b09d-91925e1bd16c"/>
+								<textFieldExpression><![CDATA[$F{retrovisor_comum}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="122" height="15" uuid="7a61c5b3-a802-4f42-b1fb-7c16cf6ce0f5"/>
+								<text><![CDATA[Retrovisor eletrico:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="122" height="15" uuid="c3052dff-ca5f-4a54-be44-6c95f0180147"/>
+								<textFieldExpression><![CDATA[$F{retrovisor_eletrico}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="112" uuid="ce61cec8-2a3c-4d01-8ac1-cbbefe6da331">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="112" height="15" uuid="447fa776-7550-457d-8e34-eaca0c5f5907"/>
+								<text><![CDATA[Break Light:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="112" height="15" uuid="9f9724d1-5cbc-45dd-92dc-093a326a6ad6"/>
+								<textFieldExpression><![CDATA[$F{break_light}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="112" height="15" uuid="77eea2de-d0d3-4f36-8340-0111a0bb95d4"/>
+								<text><![CDATA[Radio Toca cds:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="112" height="15" uuid="9bc902b7-db25-4b75-825a-1fab90b7255d"/>
+								<textFieldExpression><![CDATA[$F{radio_toca_cds}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="112" height="15" uuid="c5343dd9-d9e2-4f27-92d3-7c690841ac24"/>
+								<text><![CDATA[Farois auxiliares:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="112" height="15" uuid="26d93fe0-fe68-4119-ab7b-ef937b9c1408"/>
+								<textFieldExpression><![CDATA[$F{farois_auxiliares}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="112" height="15" uuid="3d4d6e76-12cc-4834-bcd6-4252090cdf44"/>
+								<text><![CDATA[Rodas de liga:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="112" height="15" uuid="8f707bc9-2146-4d65-af35-8b48b28200e9"/>
+								<textFieldExpression><![CDATA[$F{rodas_de_liga}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="112" height="15" uuid="96c214e4-1670-4074-a3f1-d561cd8d5d45"/>
+								<text><![CDATA[Rodas comuns:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="112" height="15" uuid="029a2cfa-02a9-4411-a578-1dae3c86c623"/>
+								<textFieldExpression><![CDATA[$F{roda_comuns}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="111" uuid="0443f728-239b-4448-9a15-15ab7f8284d8">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="111" height="15" uuid="ae4c6eed-ac77-4d5d-8e1b-b380d4c7939f"/>
+								<text><![CDATA[Amplificador]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="111" height="15" uuid="467e44cc-a9a5-4d7c-a19b-bebf0e216a66"/>
+								<textFieldExpression><![CDATA[$F{amplificador}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="111" height="15" uuid="1b6bbb5a-ec90-4092-bf8a-7ac09c38d2d1"/>
+								<text><![CDATA[Protetor de carter:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="111" height="15" uuid="0b06ce7a-4065-4861-be7e-e58f6573dd7d">
+									<property name="net.sf.jasperreports.export.pdf.tag.table" value=""/>
+								</reportElement>
+								<textFieldExpression><![CDATA[$F{protetor_carter}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="111" height="15" uuid="012eb094-0caa-4e0a-bf0a-5c0fd037fe71"/>
+								<text><![CDATA[Banco dianteiro:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="111" height="15" uuid="cc094b27-c0d2-42e9-805b-7936e68e4933"/>
+								<textFieldExpression><![CDATA[$F{banco_dianteiro}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="111" height="15" uuid="554ab372-89de-42ad-a63a-a6a103377e9e"/>
+								<text><![CDATA[Tapetes:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="111" height="15" uuid="134a8f76-98f0-4579-87fe-0ffb0a5c89e7"/>
+								<textFieldExpression><![CDATA[$F{tapetes}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="111" height="15" uuid="1f08cb16-e3eb-4c3c-aefb-2db615128321"/>
+								<text><![CDATA[Banco traseiro:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="111" height="15" uuid="5b9e541b-e73f-41f7-8640-bd41f6b1a5d1"/>
+								<textFieldExpression><![CDATA[$F{banco_traseiro}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="a09d0754-fce6-4e26-a393-f451cb4e2003">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="37a0f37e-88e4-4718-850f-8fb366708d4c"/>
+								<text><![CDATA[Extintor:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="232b0007-d694-4dc1-a755-45ffa762fc27"/>
+								<textFieldExpression><![CDATA[$F{extintor}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="32a76fc0-93fa-4df2-9923-81d55402aa8d"/>
+								<text><![CDATA[Bateria:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="9c3eb460-962f-463d-9ce8-3fd1760e6ef7"/>
+								<textFieldExpression><![CDATA[$F{bateria}]]></textFieldExpression>
+							</textField>
+						</jr:tableFooter>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="ebec8f30-8f6b-4550-b758-ec51522fe476"/>
+								<text><![CDATA[Triangulo]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="f3f8960f-93e4-492d-8f30-693234197ed6"/>
+								<textFieldExpression><![CDATA[$F{triangulo}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="f7544407-7435-48f3-aca5-24da482e418a"/>
+								<text><![CDATA[Buzinas:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="9b31efda-35b3-416b-ac26-5b0c51b5ec4a"/>
+								<textFieldExpression><![CDATA[$F{buzinas}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="7cfa9e8f-415c-4cce-a42a-be49ee5a42fd"/>
+								<text><![CDATA[Console interno:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="7c8f34d0-464d-4b40-b777-6bd2484ed344"/>
+								<textFieldExpression><![CDATA[$F{console_interno}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+					<jr:column width="100" uuid="552c1aef-52d6-4881-94ae-8a7796a69a5a">
+						<jr:tableHeader style="table 2_TH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="a37a81f4-9c58-4823-bc6c-6e34f9a05160"/>
+								<text><![CDATA[Macaco:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="669f5d10-4013-41cc-a2d8-8e8737bd30d2"/>
+								<textFieldExpression><![CDATA[$F{macaco}]]></textFieldExpression>
+							</textField>
+						</jr:tableHeader>
+						<jr:tableFooter style="table 2_TH" height="30" rowSpan="1"/>
+						<jr:columnHeader style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="b12c7c35-0b7a-4182-abe6-8c1f56e19209"/>
+								<text><![CDATA[Chave de roda:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="711fb2e2-c3d0-4574-b4a5-07cec9b00443"/>
+								<textFieldExpression><![CDATA[$F{chave_de_roda}]]></textFieldExpression>
+							</textField>
+						</jr:columnHeader>
+						<jr:columnFooter style="table 2_CH" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="53eb9397-40cc-4840-bbc2-fbc54a7cdf88"/>
+								<text><![CDATA[Alarme:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="29bf99ef-2254-444f-bc0f-cdb2383a29b2"/>
+								<textFieldExpression><![CDATA[$F{alarme}]]></textFieldExpression>
+							</textField>
+						</jr:columnFooter>
+						<jr:detailCell style="table 2_TD" height="30" rowSpan="1">
+							<staticText>
+								<reportElement x="0" y="0" width="100" height="15" uuid="517173e0-818f-4f43-9f80-867d22620a06"/>
+								<text><![CDATA[Calotas:]]></text>
+							</staticText>
+							<textField>
+								<reportElement x="0" y="15" width="100" height="15" uuid="f5f0f89d-b013-406c-898b-4e8e8b135874"/>
+								<textFieldExpression><![CDATA[$F{calotas}]]></textFieldExpression>
+							</textField>
+						</jr:detailCell>
+					</jr:column>
+				</jr:table>
+			</componentElement>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="42" splitType="Prevent"/>
+	</pageFooter>
+	<summary>
+		<band height="35" splitType="Prevent"/>
+	</summary>
+</jasperReport>
