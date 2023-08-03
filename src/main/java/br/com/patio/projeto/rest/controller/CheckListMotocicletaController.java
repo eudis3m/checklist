@@ -52,9 +52,9 @@ public class CheckListMotocicletaController implements CheckListMotocicletaAPI{
 	public ResponseEntity<CheckListMotocicletaEntity> save(CheckListMotocicletaEntity  obj) throws Exception {
 		CheckListMotocicletaEntity objEntityNew =  checkListserviceimp.create(obj);
 		
-		URI uri = APIControllersUtils.generateURIByOid((Long) objEntityNew.getOid());
+		//URI uri = APIControllersUtils.generateURIByOid((Long) objEntityNew.getOid());
 		
-		return ResponseEntity.created(uri).body(objEntityNew);
+		return ResponseEntity.ok().body(objEntityNew);
 	}
 
 	@Override

@@ -113,6 +113,7 @@ public  class  CheckListMotocicletaService {
 			 String path =  gerapasta.Pasta(resultemail.getEmpresa(), resultemail.getVeiculo(), placa);
 		        List<CheckListMotocicletaEntity> resultchecklist = checklistRepository.findByList(placa);
 		        List<RetiraVeiculoEntity> resulttermo = retiraveiculoRepository.findByRetiraMotocicleta(placa);
+		        if(resulttermo != null) {
                 Map<String, Object> parameters = new HashMap<>();
                  parameters.put("$P{Placa}", placa);
                JRBeanCollectionDataSource datachecklist = new JRBeanCollectionDataSource(resultchecklist);
@@ -129,32 +130,30 @@ public  class  CheckListMotocicletaService {
     	        	 JasperExportManager.exportReportToPdfFile(jasperPrint,
     	        			 path +"\\CheckListMotocicleta.pdf" );
     			 String pdfExport = new ClassPathResource("CheckListMotocicleta.pdf").getPath();
-       	        FileInputStream inputStream = new FileInputStream(pdfExport);
-       	        String remoteFile = path+"/CheckListMotocicleta.pdf";
-       	        String remoteFileDownloadPDF = path+"/CheckListMotocicleta.pdf";
-       	        String remoteFileDownloadFoto = path+"/foto";
-       	        String remoteFileDownloadFoto_2 = path+"/foto_2";
-       	        String remoteFileDownloadFoto_3 = path+"/foto_3";
-       	        String remoteFileDownloadFoto_4 = path+"/foto_4";
-       	        String remoteFileDownloadFoto_5 = path+"/foto_5";
-       	        /*connect.storeFile(remoteFile,inputStream);
-       	        connect.retrieveFileStream(remoteFileDownloadPDF);
-       	        connect.retrieveFileStream(remoteFileDownloadFoto);
-       	        connect.retrieveFileStream(remoteFileDownloadFoto_2);
-       	        connect.retrieveFileStream(remoteFileDownloadFoto_3);
-       	        connect.retrieveFileStream(remoteFileDownloadFoto_4);
-       	        connect.retrieveFileStream(remoteFileDownloadFoto_5);*/
-       	        String foto = "api-"+resultemail.getPlaca()+".zip";
-       	        String pathZip =  gerapasta.PastaZip(path);
-       	        File zip =  compactador.compactarParaZip(pathZip
-       	        , path+"\\CheckListMotocicleta.pdf");
-       	    	relatorioemail.sendSimpleMessage(email,pdfExport, resultemail.getPlaca(), zip);
-    	    	File fileZip = new File(zip.getAbsolutePath());
-    	    	FileDto pdf = new FileDto();
-    	    	pdf.setDownload(fileZip);
-    	    	
-    		       
- 		       return fileZip;
+       	        File inputStream = new File(pdfExport);
+					relatorioemail.sendSimpleMessage(email,pdfExport, resultemail.getPlaca());
+					FileDto pdf = new FileDto();
+					pdf.setDownload(pdfExport);
+
+					return inputStream;}
+		        else {
+	                Map<String, Object> parameters = new HashMap<>();
+	                 parameters.put("$P{Placa}", placa);
+	               JRBeanCollectionDataSource datachecklist = new JRBeanCollectionDataSource(resultchecklist);
+	               JRBeanCollectionDataSource datatermo = new JRBeanCollectionDataSource(resulttermo);
+	               String checklist = resourceLoader.getResource("classpath:CheckListMotocicleta.jrxml").getURI().getPath();
+	               JasperReport jasperChecklist = JasperCompileManager.compileReport(checklist);	 
+	                JasperPrint jasperPrint = JasperFillManager.fillReport(jasperChecklist, parameters,datachecklist);
+	    	        	 JasperExportManager.exportReportToPdfFile(jasperPrint,
+	    	        			 path +"\\CheckListMotocicleta.pdf" );
+	    			 String pdfExport = new ClassPathResource("CheckListMotocicleta.pdf").getPath();
+	       	        File inputStream = new File(pdfExport);
+					relatorioemail.sendSimpleMessage(email,pdfExport, resultemail.getPlaca());
+					FileDto pdf = new FileDto();
+					pdf.setDownload(pdfExport);
+
+					return inputStream;
+		        }
 		
 	     } catch (Exception e) {
 		       // TODO Auto-generated catch block
@@ -165,11 +164,11 @@ public  class  CheckListMotocicletaService {
 	
 	public File findByPlaca(String placa) throws JRException, SQLException, IOException {
         CheckListMotocicletaEntity resultemail = checklistRepository.findByPlaca(placa);
-        //FTPClient connect = gerapasta.fTPClient();
 try {
 	 String path =  gerapasta.Pasta(resultemail.getEmpresa(), resultemail.getVeiculo(), placa);
         List<CheckListMotocicletaEntity> resultchecklist = checklistRepository.findByList(placa);
         List<RetiraVeiculoEntity> resulttermo = retiraveiculoRepository.findByRetiraMotocicleta(placa);
+        if(resulttermo != null) {
         Map<String, Object> parameters = new HashMap<>();
          parameters.put("$P{Placa}", placa);
        JRBeanCollectionDataSource datachecklist = new JRBeanCollectionDataSource(resultchecklist);
@@ -186,29 +185,28 @@ try {
         	 JasperExportManager.exportReportToPdfFile(jasperPrint,
         			 path );
 		 String pdfExport = new ClassPathResource("CheckListMotocicleta.pdf").getPath();
-	        FileInputStream inputStream = new FileInputStream(pdfExport);
-	        String remoteFile = path+"/CheckListMotocicleta.pdf";
-	        String remoteFileDownloadPDF = path+"/CheckListMotocicleta.pdf";
-	        String remoteFileDownloadFoto = path+"/foto";
-	        String remoteFileDownloadFoto_2 = path+"/foto_2";
-	        String remoteFileDownloadFoto_3 = path+"/foto_3";
-	        String remoteFileDownloadFoto_4 = path+"/foto_4";
-	        String remoteFileDownloadFoto_5 = path+"/foto_5";
-	        /*connect.storeFile(remoteFile,inputStream);
-	        connect.retrieveFileStream(remoteFileDownloadPDF);
-	        connect.retrieveFileStream(remoteFileDownloadFoto);
-	        connect.retrieveFileStream(remoteFileDownloadFoto_2);
-	        connect.retrieveFileStream(remoteFileDownloadFoto_3);
-	        connect.retrieveFileStream(remoteFileDownloadFoto_4);
-	        connect.retrieveFileStream(remoteFileDownloadFoto_5);*/
-	        String pathZip =  gerapasta.PastaZip(path);
-	        File zip =  compactador.compactarParaZip(pathZip
-	       	        , path+"\\CheckListMotocicleta.pdf");
-        File fileZip = new File(path+"\\CheckListMotocicleta.pdf");
-    	FileDto pdf = new FileDto();
-    	pdf.setDownload(fileZip);
-	       
-	       return fileZip;
+	        File inputStream = new File(pdfExport);
+			FileDto pdf = new FileDto();
+			pdf.setDownload(pdfExport);
+
+			return inputStream;}
+        else {
+        	 Map<String, Object> parameters = new HashMap<>();
+             parameters.put("$P{Placa}", placa);
+           JRBeanCollectionDataSource datachecklist = new JRBeanCollectionDataSource(resultchecklist);
+           JRBeanCollectionDataSource datatermo = new JRBeanCollectionDataSource(resulttermo);
+           String checklist = resourceLoader.getResource("classpath:CheckListMotocicleta.jrxml").getURI().getPath();
+           JasperReport jasperChecklist = JasperCompileManager.compileReport(checklist);
+            JasperPrint jasperPrint = JasperFillManager.fillReport(jasperChecklist, parameters,datachecklist);
+            	 JasperExportManager.exportReportToPdfFile(jasperPrint,
+            			 path );
+    		 String pdfExport = new ClassPathResource("CheckListMotocicleta.pdf").getPath();
+    	        File inputStream = new File(pdfExport);
+			FileDto pdf = new FileDto();
+			pdf.setDownload(pdfExport);
+
+			return inputStream;
+        }
 
  } catch (Exception e) {
        // TODO Auto-generated catch block
@@ -236,10 +234,21 @@ return null;
 //			obj = prepareAudit(obj);
 			carregaimagem.ReadImageAsByteArray(obj.getFoto(), 
 					 obj.getFoto_2(),
-						obj.getFoto_3(), obj.getFoto_4(), obj.getFoto_5(),obj.getEmpresa(), obj.getVeiculo(), obj.getPlaca());
+					 obj.getFoto_3(), obj.getFoto_4(), obj.getFoto_5(),
+					 obj.getFoto_6(),  obj.getFoto_7(), obj.getFoto_8(),
+					 obj.getEmpresa(), obj.getVeiculo(), obj.getPlaca());
 			//obj = validateEntity(obj);
-			CheckListMotocicletaEntity resultSave = checklistRepository.save(obj);
-			return resultSave;
+			 CheckListMotocicletaEntity resultSave = checklistRepository.save(obj);
+			/*checklistRepository.inseriMotocicleta(
+					obj.getTanque() , obj.getProtecao_frontal(), obj.getRetrovisor_dir() , obj.getRetrovisor_esq(), obj.getFarol(), obj.getBanco(), obj.getPneu_dianteiro(),
+					obj.getPneu_traseiro(), obj.getBengala() , obj.getFreio(), obj.getCarenagem_dir(), obj.getCarenagem_esq(), obj.getSuporte_placa(), obj.getMotor(), obj.getFarolete(), obj.getSeta_dir(), obj.getSeta_esq(), obj.getEscapamento(),
+					obj.getRoda_traseira(), obj.getRoda_dianteira(), obj.getObservacao(), obj.getSolicitante(), obj.getProprietario(), obj.getVeiculo(), obj.getChassi(), obj.getLocal(), obj.getAtravesDE(), obj.getTelefone(), obj.getEntrada(),
+			        obj.getRenavam(), obj.getBairro(), obj.getGuincho(), obj.getCpf_cnpj(), obj.getCor(), obj.getProduto(), obj.getCidade(), obj.getPlaca(), obj.getUf(), obj.getDocumento(), obj.getBagagito(), obj.getRetrovisor_eletrico(),
+			        obj.getRetrovisor_comum(), obj.getFarois_auxiliares(), obj.getRodas_comum(), obj.getRodas_de_liga(), obj.getRadio_toca_cds(), obj.getAmplificador(), obj.getMata_cachorro(),
+			        obj.getBuzinas(), obj.getBateria(), obj.getAlarme(), obj.getEmpresa(), obj.getMotocicleta(),
+			        obj.getCombustivel(), obj.getPneus_status(), obj.getAssinatura_vistoriador(), obj.getAssinatura_policial()
+			);*/
+			return obj;
 		}
 		throw new EmptyElementException(getGenericName() + " não pode ser inserido se vazio.");
 	}

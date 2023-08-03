@@ -60,17 +60,8 @@ public class RetiraVeiculoEntity extends BaseEntity  implements Serializable {
 	@Column(name="diaria", nullable=true, length=100)
 	 Integer diaria;
 
-	@ManyToOne
-    @JoinColumn(name="oid_checklist")
-    private CheckListAutomovelEntity oidchecklist;
 	
-	public CheckListAutomovelEntity getOidchecklist() {
-		return oidchecklist;
-	}
 
-	public void setOidchecklist(CheckListAutomovelEntity oidchecklist) {
-		this.oidchecklist = oidchecklist;
-	}
 
 	public  Double getTotal() {
 		return total;

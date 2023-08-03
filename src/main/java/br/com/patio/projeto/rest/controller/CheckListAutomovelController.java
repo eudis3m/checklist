@@ -8,11 +8,13 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.patio.projeto.business.service.CheckListAutomovelService;
+import br.com.patio.projeto.dto.CheckListAutomovelTabelaDTO;
 import br.com.patio.projeto.dto.FileDto;
 import br.com.patio.projeto.entity.CheckListAutomovelEntity;
 import br.com.patio.projeto.entity.RetiraVeiculoEntity;
@@ -60,7 +62,19 @@ public class CheckListAutomovelController implements CheckListAutomovelAPI{
 		return ResponseEntity.created(uri).body(objEntityNew);
 	}*/
     
-	public ResponseEntity<CheckListAutomovelEntity> save(CheckListAutomovelEntity  obj) throws Exception {
+	/*public CheckListAutomovelEntity save(CheckListAutomovelEntity obj,
+			String foto, String foto_2, String foto_3, String foto_4, String foto_5, String foto_6
+			   , String foto_7, String foto_8) throws Exception {
+		CheckListAutomovelEntity objEntityNew =  checkListserviceimp.create(obj,foto,foto_2, foto_3, foto_4, 
+				foto_5,foto_6
+				   , foto_7, foto_8);
+		
+		//URI uri = APIControllersUtils.generateURIByOid((Long) objEntityNew.getOid());
+		
+		return objEntityNew;
+	}*/
+	
+	public ResponseEntity  save(CheckListAutomovelEntity obj) throws Exception {
 		CheckListAutomovelEntity objEntityNew =  checkListserviceimp.create(obj);
 		
 		//URI uri = APIControllersUtils.generateURIByOid((Long) objEntityNew.getOid());
@@ -85,5 +99,6 @@ public class CheckListAutomovelController implements CheckListAutomovelAPI{
 		return null;
 	}
 
+	
 	
 }

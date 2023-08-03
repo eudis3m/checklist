@@ -4,16 +4,7 @@ import java.io.Serializable;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
 
 import org.exolab.castor.types.DateTime;
 
@@ -56,21 +47,41 @@ public class CheckListMotocicletaEntity implements Serializable {
 			this.oid = oid;
 	}
 		
-	//@Column(name="foto", nullable=true, length=100)
+	@Column(name="foto", nullable=true)
 	byte[] foto;
     
-	//@Column(name="foto_2", nullable=true, length=100)
+	@Column(name="foto_2", nullable=true)
 	byte[] foto_2;
 	
-	//@Column(name="foto_3", nullable=true, length=100)
+	@Column(name="foto_3", nullable=true)
 	byte[] foto_3;
 	
-	//@Column(name="foto_4", nullable=true, length=100)
+	@Column(name="foto_4", nullable=true)
 	byte[] foto_4;
 
-	//@Column(name="foto_5", nullable=true, length=100)
+	@Column(name="foto_5", nullable=true)
 	byte[] foto_5;
-	
+
+	@Column(name="foto_6", nullable=true)
+	byte[] foto_6;
+
+	@Column(name="foto_7", nullable=true)
+	byte[] foto_7;
+
+	@Column(name="foto_8", nullable=true)
+	byte[] foto_8;
+
+	@Column(name="combustivel", nullable=true, length=100)
+	private String combustivel;
+
+	@Column(name="pneus_status", nullable=true, length=100)
+	private String pneus_status;
+
+	@Column(name="assinatura_policial", nullable=true, length=100)
+	private byte[] assinatura_policial;
+
+	@Column(name="assinatura_vistoriador", nullable=true, length=100)
+	private byte[] assinatura_vistoriador;
 	@Column(name="tanque", nullable=true, length=100)
     private Integer tanque;
     
@@ -759,6 +770,65 @@ public void setSeta_esq(Integer seta_esq) {
 	public void setFoto_5(byte[] foto_5) {
 		this.foto_5 = foto_5;
 	}
-	
+
+	public byte[] getFoto_6() {
+		return foto_6;
+	}
+
+	public byte[] getFoto_7() {
+		return foto_7;
+	}
+
+	public byte[] getFoto_8() {
+		return foto_8;
+	}
+
+	public void setFoto_6(byte[] foto_6) {
+		this.foto_6 = foto_6;
+	}
+
+	public void setFoto_7(byte[] foto_7) {
+		this.foto_7 = foto_7;
+	}
+
+	public void setFoto_8(byte[] foto_8) {
+		this.foto_8 = foto_8;
+	}
+
+
+	public String getCombustivel() {
+		return combustivel;
+	}
+
+	public String getPneus_status() {
+		return pneus_status;
+	}
+
+	public byte[] getAssinatura_vistoriador() {
+		return assinatura_vistoriador;
+	}
+
+	public byte[] getAssinatura_policial() {
+		return assinatura_policial;
+	}
+
+	public void setCombustivel(String combustivel) {
+		this.combustivel = combustivel;
+	}
+
+	public void setPneus_status(String pneus_status) {
+		this.pneus_status = pneus_status;
+	}
+
+
+	public void setAssinatura_vistoriador(byte[] assinatura_vistoriador) {
+		this.assinatura_vistoriador = assinatura_vistoriador;
+	}
+
+	public void setAssinatura_policial(byte[] assinatura_policial) {
+		this.assinatura_policial = assinatura_policial;
+	}
+
+
 }
     

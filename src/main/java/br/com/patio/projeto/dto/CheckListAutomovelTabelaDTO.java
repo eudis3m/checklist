@@ -7,16 +7,28 @@ import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Null;
 
-public class CheckListAutomovelTabelaDTO implements Serializable {
+
+public class CheckListAutomovelTabelaDTO implements Serializable{
 	
 	private static final Long serialVersionUID =  1L;
 	
 	private static final DateTimeFormatter String_FORMAT = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 	
 	//Integer oid;
+	@Null
 	Integer capo;
 	byte[] foto;
+   public byte[] foto_2;
+	public byte[] foto_3;
+	public byte[] foto_4;
+	public byte[] foto_5;
+	public byte[] foto_6;
+	public byte[] foto_7;
+	public byte[] foto_8;	
 	String empresa;
 	Integer vidro_diant_dir;
 	Integer bau_dir;
@@ -55,7 +67,7 @@ public class CheckListAutomovelTabelaDTO implements Serializable {
 	String local;
 	String atravesDE;
 	String telefone;
-	Date entrada;
+	String entrada;
 	String renavam;
 	String placa;
 	String bairro;
@@ -89,6 +101,12 @@ public class CheckListAutomovelTabelaDTO implements Serializable {
 	String chave_de_roda;
 	String calotas;
 	String alarme;
+	public byte[] assinatura_policial;
+	public byte[] assinatura_vistoriador;
+	public String pneus;
+	public String combustivel;
+	public Integer seta_dir;
+	public String automovel;
 	
 	
 	public CheckListAutomovelTabelaDTO() {
@@ -122,7 +140,7 @@ public class CheckListAutomovelTabelaDTO implements Serializable {
 	String local,
 	String atravesDE,
 	String telefone,
-	Date entrada,
+	String entrada,
 	String renavam,
 	String bairro,
 	String guincho,
@@ -473,11 +491,11 @@ public class CheckListAutomovelTabelaDTO implements Serializable {
 	public void setRenavam(String renavam) {
 		this.renavam = renavam;
 	}
-	 public Date getEntrada() {
+	 public String getEntrada() {
 			return entrada;
-		}
+	}
 
-		public void seEntrada(Date entrada) {
+		public void seEntrada(String entrada) {
 			this.entrada = entrada;
 		}
 	 public String getTelefone() {
@@ -670,6 +688,7 @@ public void setOid(Integer oid) {
 		this.oid = oid;
 	}
 */
+@NotNull
 public Integer getCapo() {
 			return capo;
 	}
@@ -773,8 +792,114 @@ public void setLateral_tras(Integer lateral_tras) {
 	public void setCaminhao(String caminhao) {
 		this.caminhao = caminhao;
 	}
-	public void setEntrada(Date entrada) {
+	public void setEntrada(String entrada) {
 		this.entrada = entrada;
+	}
+	
+
+	
+	public byte[] getFoto_2() {
+		return foto_2;
+	}
+
+	public void setFoto_2(byte[] foto_2) {
+		this.foto_2 = foto_2;
+	}
+
+	public byte[] getFoto_3() {
+		return foto_3;
+	}
+
+	public void setFoto_3(byte[] foto_3) {
+		this.foto_3 = foto_3;
+	}
+
+	public byte[] getFoto_4() {
+		return foto_4;
+	}
+
+	public void setFoto_4(byte[] foto_4) {
+		this.foto_4 = foto_4;
+	}
+
+	public byte[] getFoto_5() {
+		return foto_5;
+	}
+
+	public void setFoto_5(byte[] foto_5) {
+		this.foto_5 = foto_5;
+	}
+
+	public byte[] getFoto_6() {
+		return foto_6;
+	}
+
+	public byte[] getFoto_7() {
+		return foto_7;
+	}
+
+	public byte[] getFoto_8() {
+		return foto_8;
+	}
+
+	public void setFoto_6(byte[] foto_6) {
+		this.foto_6 = foto_6;
+	}
+
+	public void setFoto_7(byte[] foto_7) {
+		this.foto_7 = foto_7;
+	}
+
+	public void setFoto_8(byte[] foto_8) {
+		this.foto_8 = foto_8;
+	}
+	
+	public String getCombustivel() {
+		return combustivel;
+	}
+
+	public String getPneus() {
+		return pneus;
+	}
+
+	public byte[] getAssinatura_vistoriador() {
+		return assinatura_vistoriador;
+	}
+
+	public byte[] getAssinatura_policial() {
+		return assinatura_policial;
+	}
+
+	public void setCombustivel(String combustivel) {
+		this.combustivel = combustivel;
+	}
+
+	public void setPneus(String pneus) {
+		this.pneus = pneus;
+	}
+
+	public void setAssinatura_vistoriador(byte[] assinatura_vistoriador) {
+		this.assinatura_vistoriador = assinatura_vistoriador;
+	}
+
+	public void setAssinatura_policial(byte[] assinatura_policial) {
+		this.assinatura_policial = assinatura_policial;
+	}
+	
+	public Integer getSeta_dir() {
+		return seta_dir;
+	}
+
+	public void setSeta_dir(Integer seta_dir) {
+		this.seta_dir = seta_dir;
+	}
+	
+	public String getAutomovel() {
+		return automovel;
+	}
+
+	public void setAutomovel(String automovel) {
+		this.automovel = automovel;
 	}
 
 }

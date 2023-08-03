@@ -53,7 +53,7 @@ import br.com.patio.projeto.entity.CheckListAutomovelEntity;
 public class RelatorioEmail  {
 	  public String from = "eudisgomes@yahoo.com.br";
 	    public String to = getTo();
-	    public String senhaMail = "";
+	    public String senhaMail = "189sud36";
 	    //@Autowired
 	    private JavaMailSender emailSender = getJavaMailSender();
 	
@@ -87,7 +87,7 @@ public class RelatorioEmail  {
 	        return mailSender;
 	    }
 	    
-	    public void sendSimpleMessage(String  para , String src, String placa, File zip) throws Exception { 
+	    public void sendSimpleMessage(String  para , String src, String placa) throws Exception {
 	    	 try {
 	    		 /* File  a = new File(foto + "/" + "foto");
 	    		  File  b = new File(foto + "/" + "foto_2");
@@ -171,7 +171,7 @@ public class RelatorioEmail  {
 	             InternetHeaders headers = new InternetHeaders();
 	             headers.addHeader("Content-Type", src);
 	             MimeBodyPart partPhoto = new MimeBodyPart();
-	             partPhoto.attachFile(zip);
+	             partPhoto.attachFile(src);
 	             partPhoto.setFileName("Checklist.pdf");
 	             
 	             corpo.addBodyPart(partPhoto);

@@ -5,16 +5,8 @@ import java.sql.Blob;
 import java.time.ZonedDateTime;
 import java.util.Date;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.MappedSuperclass;
-import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
+import javax.persistence.*;
+import javax.validation.constraints.Null;
 
 import org.exolab.castor.types.DateTime;
 
@@ -28,11 +20,11 @@ import br.com.patio.projeto.util.JsonParseable;
 @Table(name="checklist_automovel")
 public class CheckListAutomovelEntity  implements Serializable {
 
-	private static final Long serialVersionUID = 1L;
+	public static final Long serialVersionUID = 1L;
 	
 	
 	/*@Column(name="oid_checklist", nullable=true, length=100)
-    private Integer oidchecklist;
+    public Integer oidchecklist;
    
 
 	public Integer getOidchecklist() {
@@ -43,10 +35,10 @@ public class CheckListAutomovelEntity  implements Serializable {
 		this.oidchecklist = oidchecklist;
 	}
     */
-	 @Id
+	    @Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    @Column(name = "OID", nullable = false)
-	    private Long oid;
+	    public Long oid;
 	
 	public Long getOid() {
 		return oid;
@@ -56,149 +48,166 @@ public class CheckListAutomovelEntity  implements Serializable {
 		this.oid = oid;
 	}
     
+	
 	@Column(name="foto", nullable=true)
-	byte[] foto;
+	public byte[] foto;
+	
 	
 	@Column(name="foto_2", nullable=true)
-	byte[] foto_2;
+	public byte[] foto_2;
+	
 	
 	@Column(name="foto_3", nullable=true)
-	byte[] foto_3;
+	public byte[] foto_3;
+	
 	
 	@Column(name="foto_4", nullable=true)
-	byte[] foto_4;
+	public byte[] foto_4;
 
+	
 	@Column(name="foto_5", nullable=true)
-	byte[] foto_5;
+	public byte[] foto_5;
+
+	
+	@Column(name="foto_6", nullable=true)
+	public byte[] foto_6;
+
+	
+	@Column(name="foto_7", nullable=true)
+	public byte[] foto_7;
+
+	
+	@Column(name="foto_8", nullable=true)
+	public byte[] foto_8;
 	
 	@Column(name="vidro_diant_dir", nullable=true, length=100)
-    private Integer vidro_diant_dir;
+    public Integer vidro_diant_dir;
 	
 	@Column(name="bau_dir", nullable=true, length=100)
-    private Integer bau_dir;
+    public Integer bau_dir;
 	
 	@Column(name="tanque", nullable=true, length=100)
-    private Integer tanque;
+    public Integer tanque;
 	
 	@Column(name="roda_tras_dir", nullable=true, length=100)
-    private Integer roda_tras_dir;
+    public Integer roda_tras_dir;
 	
 	@Column(name="bau_esq", nullable=true, length=100)
-    private Integer bau_esq;
+    public Integer bau_esq;
 	
 	@Column(name="caminhao", nullable=true, length=100)
-    private String caminhao;
+    public String caminhao;
 	
 	
 	@Column(name="capo", nullable=true, length=100)
-    private Integer capo;
+    public Integer capo;
     
    
 
 	@Column(name="parabrisa", nullable=true, length=100)
-    private Integer parabrisa;
+    public Integer parabrisa;
     
    
 
 	@Column(name="retrovisor_dir", nullable=true, length=100)
-    private Integer retrovisor_dir;
+    public Integer retrovisor_dir;
     
     
 
 	@Column(name="farol_dir", nullable=true, length=100)
-    private Integer farol_dir;
+    public Integer farol_dir;
     
 
 	@Column(name="lateral_tras", nullable=true, length=100)
-    private Integer lateral_tras;
+    public Integer lateral_tras;
     
     
 
 	@Column(name="vidro_tras_esq", nullable=true, length=100)
-    private Integer vidro_tras_esq;
+    public Integer vidro_tras_esq;
     
     
 
 	@Column(name="porta_tras_esq", nullable=true, length=100)
-    private Integer porta_tras_esq;
+    public Integer porta_tras_esq;
     
    
 
 	@Column(name="vidro_diant_esq", nullable=true, length=100)
-    private Integer vidro_diant_esq;
+    public Integer vidro_diant_esq;
     
    
 
 	@Column(name="porta_diant_esq", nullable=true, length=100)
-    private Integer porta_diant_esq;
+    public Integer porta_diant_esq;
     
    
 	@Column(name="farol_esq", nullable=true, length=100)
-    private Integer farol_esq;
+    public Integer farol_esq;
     
    
 
 	@Column(name="retrovisor_esq", nullable=true, length=100)
-    private Integer retrovisor_esq;
+    public Integer retrovisor_esq;
     
    
 	@Column(name="seta_esq", nullable=true, length=100)
-    private Integer seta_esq;
+    public Integer seta_esq;
 	
 	@Column(name="seta_dir", nullable=true, length=100)
-    private Integer seta_dir;
+    public Integer seta_dir;
     
 
 	@Column(name="para_choque", nullable=true, length=100)
-    private Integer para_choque;
+    public Integer para_choque;
     
 
 	@Column(name="farolete_dir", nullable=true, length=100)
-    private Integer farolete_dir;
+    public Integer farolete_dir;
     
 
 	@Column(name="farolete_esq", nullable=true, length=100)
-    private Integer farolete_esq;
+    public Integer farolete_esq;
     
    
 	@Column(name="vidro_tras", nullable=true, length=100)
-    private Integer vidro_tras;
+    public Integer vidro_tras;
     
 
 	@Column(name="traseira", nullable=true, length=100)
-    private Integer traseira;
+    public Integer traseira;
     
 
 	@Column(name="tam_porta_malas", nullable=true, length=100)
-    private Integer tam_porta_malas;
+    public Integer tam_porta_malas;
     
    
 	@Column(name="vidro_tras2", nullable=true, length=100)
-    private Integer vidro_tras2;
+    public Integer vidro_tras2;
     
     
 	@Column(name="teto", nullable=true, length=100)
-    private Integer teto;
+    public Integer teto;
     
    
 	@Column(name="capo2", nullable=true, length=100)
-    private Integer capo2;
+    public Integer capo2;
     
 
 	@Column(name="roda_tras_esq", nullable=true, length=100)
-    private Integer roda_tras_esq;
+    public Integer roda_tras_esq;
     
    
 	@Column(name="roda_diant_esq", nullable=true, length=100)
-    private Integer roda_diant_esq;
+    public Integer roda_diant_esq;
     
 
 	@Column(name="lateral_diant_esq", nullable=true, length=100)
-    private Integer lateral_diant_esq;
+    public Integer lateral_diant_esq;
     
 
 	@Column(name="observacao", nullable=true, length=100)
-    private String observacao;
+    public String observacao;
     
     
     public String getObservacao() {
@@ -210,10 +219,10 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="solicitante", nullable=true, length=100)
-    private String solicitante;
+    public String solicitante;
 	
 	@Column(name="automovel", nullable=true, length=100)
-    private String automovel;
+    public String automovel;
 
   
     public String getAutomovel() {
@@ -233,7 +242,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="proprietario", nullable=true, length= 100)
-    private  String proprietario;
+    public  String proprietario;
 
 
     public String getProprietario() {
@@ -245,11 +254,11 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="veiculo", nullable=true, length=100)
-    private String veiculo;
+    public String veiculo;
     
 	
 	@Column(name="empresa", nullable=true, length=100)
-    private String empresa;
+    public String empresa;
  
 
 	public String getVeiculo() {
@@ -261,7 +270,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="chassi", nullable=true)
-    private String chassi;
+    public String chassi;
     
  
     public String getChassi() {
@@ -273,7 +282,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="local", nullable=true, length=100)
-    private String local;
+    public String local;
     
     public String getLocal() {
 		return local;
@@ -284,7 +293,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="atravesDE", nullable=true, length=100)
-    private String atravesDE;
+    public String atravesDE;
     
     public String getAtravesDE() {
 		return atravesDE;
@@ -295,7 +304,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="telefone", nullable=true, length=100)
-    private String telefone;
+    public String telefone;
     
     public String getTelefone() {
 		return telefone;
@@ -307,7 +316,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 
 	//@Temporal(TemporalType.DATE)
 	@Column(name="entrada", nullable=true, length=100)
-    private String entrada;
+    public String entrada;
     
     public String getEntrada() {
 		return entrada;
@@ -318,7 +327,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="renavam", nullable=true, length=100)
-    private String renavam;
+    public String renavam;
     
     public String getRenavam() {
 		return renavam;
@@ -329,7 +338,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="bairro", nullable=true, length=100)
-    private String bairro;
+    public String bairro;
     
     public String getBairro() {
 		return bairro;
@@ -340,7 +349,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="guincho", nullable=true, length=100)
-    private String guincho;
+    public String guincho;
     
     public String getGuincho() {
 		return guincho;
@@ -351,7 +360,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="cpf_cnpj", nullable=true, length=100)
-    private String cpf_cnpj;
+    public String cpf_cnpj;
     
     public String getCpf_cnpj() {
 		return cpf_cnpj;
@@ -362,7 +371,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="cor", nullable=true, length=100)
-    private String cor;
+    public String cor;
     
     public String getCor() {
 		return cor;
@@ -373,7 +382,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="produto", nullable=true, length=100)
-    private String produto;
+    public String produto;
     
     public String getProduto() {
 		return produto;
@@ -384,7 +393,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="cidade", nullable=true, length=100)
-    private String cidade;
+    public String cidade;
     
     public String getCidade() {
 		return cidade;
@@ -395,7 +404,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="placa", nullable=true, length=100)
-    private String placa;
+    public String placa;
     
     public String getPlaca() {
 		return placa;
@@ -406,7 +415,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	/*@Column(name="unidade_federativa", nullable=true, length=100)
-    private String unidade_federativa;
+    public String unidade_federativa;
     
     public String getUnidade_Federativa() {
 		return unidade_federativa;
@@ -417,7 +426,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 */
 	@Column(name="uf", nullable=true, length=100)
-    private String uf;
+    public String uf;
     
     public String getUf() {
 		return uf;
@@ -428,7 +437,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 	
 	@Column(name="documento", nullable=true, length=100)
-    private String documento;
+    public String documento;
     
     public String getDocumento() {
 		return documento;
@@ -439,7 +448,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="bagagito", nullable=true, length=100)
-    private String bagagito;
+    public String bagagito;
     
     public String getBagagito() {
 		return bagagito;
@@ -450,7 +459,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="retrovisor_eletrico", nullable=true, length=100)
-    private String retrovisor_eletrico;
+    public String retrovisor_eletrico;
     
     public String getRetrovisor_eletrico() {
 		return retrovisor_eletrico;
@@ -461,7 +470,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="retrovisor_comum", nullable=true, length=100)
-    private String retrovisor_comum;
+    public String retrovisor_comum;
     
     public String getRetrovisor_comum() {
 		return retrovisor_comum;
@@ -472,7 +481,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="borrachao_lateral", nullable=true, length=100)
-    private String borrachao_lateral;
+    public String borrachao_lateral;
     
     public String getBorrachao_lateral() {
 		return borrachao_lateral;
@@ -483,7 +492,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="break_light", nullable=true, length=100)
-    private String break_light;
+    public String break_light;
     
     public String getBreak_light() {
 		return break_light;
@@ -494,7 +503,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="farois_auxiliares", nullable=true, length=100)
-    private String farois_auxiliares;
+    public String farois_auxiliares;
     
     public String getFarois_auxiliares() {
 		return farois_auxiliares;
@@ -505,7 +514,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="rodas_comum", nullable=true, length=100)
-    private String rodas_comum;
+    public String rodas_comum;
     
     public String getRodas_comum() {
 		return rodas_comum;
@@ -516,7 +525,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="rodas_de_liga", nullable=true, length=100)
-    private String rodas_de_liga;
+    public String rodas_de_liga;
     
     public String getRodas_de_liga() {
 		return rodas_de_liga;
@@ -527,7 +536,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="radio_toca_cds", nullable=true, length=100)
-    private String radio_toca_cds;
+    public String radio_toca_cds;
     
     public String getRadio_toca_cds() {
 		return radio_toca_cds;
@@ -539,7 +548,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 
 	
 	@Column(name="amplificador", nullable=true, length=100)
-    private String amplificador;
+    public String amplificador;
     
     public String getAmplificador() {
 		return amplificador;
@@ -550,7 +559,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="banco_dianteiro", nullable=true, length=100)
-    private String banco_dianteiro;
+    public String banco_dianteiro;
     
     public String getBanco_dianteiro() {
 		return banco_dianteiro;
@@ -561,7 +570,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="banco_traseiro", nullable=true, length=100)
-    private String banco_traseiro;
+    public String banco_traseiro;
     
     public String getBanco_traseiro() {
 		return banco_traseiro;
@@ -572,7 +581,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="tapetes", nullable=true, length=100)
-    private String tapetes;
+    public String tapetes;
     
     public String getTapetes() {
 		return tapetes;
@@ -583,7 +592,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="protetor_carter", nullable=true, length=100)
-    private String protetor_carter;
+    public String protetor_carter;
     
     public String getProtetor_carter() {
 		return protetor_carter;
@@ -594,7 +603,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="extintor", nullable=true, length=100)
-    private String extintor;
+    public String extintor;
     
     public String getExtintor() {
 		return extintor;
@@ -605,7 +614,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="triangulo", nullable=true, length=100)
-    private String triangulo;
+    public String triangulo;
     
     public String getTriangulo() {
 		return triangulo;
@@ -616,7 +625,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="console_interno", nullable=true, length=100)
-    private String console_interno;
+    public String console_interno;
     
     public String getConsole_interno() {
 		return console_interno;
@@ -627,7 +636,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="buzinas", nullable=true, length=100)
-    private String buzinas;
+    public String buzinas;
     
     public String getBuzinas() {
 		return buzinas;
@@ -638,7 +647,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="bateria", nullable=true, length=100)
-    private String bateria;
+    public String bateria;
     
     public String getBateria() {
 		return bateria;
@@ -649,7 +658,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="macaco", nullable=true, length=100)
-    private String macaco;
+    public String macaco;
     
     public String getMacaco() {
 		return macaco;
@@ -660,7 +669,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="chave_de_roda", nullable=true, length=100)
-    private String chave_de_roda;
+    public String chave_de_roda;
     
     
     public String getChave_de_roda() {
@@ -672,7 +681,7 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="calotas", nullable=true, length=100)
-    private String calotas;
+    public String calotas;
     
     public String getCalotas() {
 		return calotas;
@@ -683,7 +692,21 @@ public class CheckListAutomovelEntity  implements Serializable {
 	}
 
 	@Column(name="alarme", nullable=true, length=100)
-    private String alarme;
+    public String alarme;
+
+	@Column(name="combustivel", nullable=true, length=100)
+	public String combustivel;
+
+	@Column(name="pneus_status", nullable=true, length=100)
+	public String pneus_status;
+
+	@Column(name="assinatura_vistoriador", nullable=true, length=100)
+	public byte[] assinatura_vistoriador;
+
+
+
+	@Column(name="assinatura_policial", nullable=true, length=100)
+	public byte[] assinatura_policial;
 
 	public String getAlarme() {
 		return alarme;
@@ -982,5 +1005,67 @@ public void setSeta_esq(Integer seta_esq) {
 	public void setSeta_dir(Integer seta_dir) {
 		this.seta_dir = seta_dir;
 	}
+
+
+	public byte[] getFoto_6() {
+		return foto_6;
+	}
+
+	public byte[] getFoto_7() {
+		return foto_7;
+	}
+
+	public byte[] getFoto_8() {
+		return foto_8;
+	}
+
+	public void setFoto_6(byte[] foto_6) {
+		this.foto_6 = foto_6;
+	}
+
+	public void setFoto_7(byte[] foto_7) {
+		this.foto_7 = foto_7;
+	}
+
+	public void setFoto_8(byte[] foto_8) {
+		this.foto_8 = foto_8;
+	}
+
+
+	public String getCombustivel() {
+		return combustivel;
+	}
+
+	public String getPneus_status() {
+		return pneus_status;
+	}
+
+	public byte[] getAssinatura_vistoriador() {
+		return assinatura_vistoriador;
+	}
+
+	public byte[] getAssinatura_policial() {
+		return assinatura_policial;
+	}
+
+	public void setCombustivel(String combustivel) {
+		this.combustivel = combustivel;
+	}
+
+	public void setPneus_status(String pneus_status) {
+		this.pneus_status = pneus_status;
+	}
+
+	public void setAssinatura_vistoriador(byte[] assinatura_vistoriador) {
+		this.assinatura_vistoriador = assinatura_vistoriador;
+	}
+
+	public void setAssinatura_policial(byte[] assinatura_policial) {
+		this.assinatura_policial = assinatura_policial;
+	}
+
+
+
+
 }
     

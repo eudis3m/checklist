@@ -8,11 +8,13 @@ import java.net.InetAddress;
 import org.apache.commons.net.ftp.FTP;
 import org.apache.commons.net.ftp.FTPClient;
 import org.apache.commons.net.ftp.FTPCmd;
+import org.apache.commons.net.ftp.FTPFile;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.integration.file.remote.RemoteFileTemplate;
 import org.springframework.integration.ftp.session.FtpRemoteFileTemplate;
 import org.springframework.integration.ftp.session.FtpSession;
 import org.springframework.stereotype.Component;
@@ -20,15 +22,18 @@ import org.springframework.stereotype.Service;
 
 import lombok.extern.log4j.Log4j2;
 
+
+
+
 @Service
 @Log4j2
 @Configuration
 public class GeraPasta {
-	private InetAddress InetAddress = null;
+	private final InetAddress InetAddress = null;
 	private String path = null;
-	private long cont = 1;
-	private FtpRemoteFileTemplate template;
-	@Value("${ftp.username}") 
+	private final long cont = 1;
+	//private FtpRemoteFileTemplate template;
+	@Value("${ftp.username}")
 	private String username;
     @Value("${ftp.password}") 
     private String pw;
@@ -38,8 +43,9 @@ public class GeraPasta {
     private int port;
 	
 	
-    public InitializingBean initializingBean(String empresa,String veiculo, String placa) {
-        return () -> template
+   /* public InitializingBean initializingBean(String empresa,String veiculo, String placa) {
+        RemoteFileTemplate<FTPFile> template = null;
+		return () -> template
                 .execute(session -> {
                 	if(placa != null) {
                 	//path = "ftp://172.17.0.2/ftp/eudis3m/Relatorios/"+empresa+"/"+veiculo+"-"+placa;
@@ -58,6 +64,9 @@ public class GeraPasta {
                 	 return path;
                 });
     }
+    */
+
+    
 
 	
 
@@ -66,7 +75,7 @@ public class GeraPasta {
 	   //FtpSession session = new FtpSession(connect);
 		if(placa != null) {
 			//path = "/ftp/alpineftp/Relatorios/"+empresa+"/"+veiculo+"-"+placa;
-			path = "C:\\Users\\eudis.junior\\Desktop\\pessoal_git\\checklist\\Relatorios\\"+empresa+"\\"+veiculo+"-"+placa;
+			path = "B://git//checklist//Relatorios//"+empresa+"//"+veiculo+"-"+placa;
 			 File local = new File(path);
 			try{
 		
@@ -109,7 +118,7 @@ public class GeraPasta {
 	//@Bean
     public FTPClient  fTPClient() throws IOException {  	
 		FTPClient  fTPClient = new FTPClient();
-    	fTPClient.connect(host, port);
+        fTPClient.connect(host, port);
     	fTPClient.user(username);
     	fTPClient.pass(pw);
     	if(fTPClient.isConnected()) {

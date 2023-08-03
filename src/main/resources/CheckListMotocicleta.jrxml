@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.5.1  -->
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="CheckList" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isTitleNewPage="true" isSummaryNewPage="true" isSummaryWithPageHeaderAndFooter="true" isFloatColumnFooter="true" whenResourceMissingType="Empty" isIgnorePagination="true" uuid="3b3857d2-b866-415f-a12f-c9651d971459">
 	<property name="ireport.zoom" value="1.5"/>
 	<property name="ireport.x" value="0"/>
@@ -10,8 +10,13 @@
 	<property name="ireport.jasperserver.reportUnit" value="/ContentFiles/pdf/CheckList_test345"/>
 	<property name="net.sf.jasperreports.print.create.bookmarks" value="false"/>
 	<property name="net.sf.jasperreports.export.csv.field.delimiter"/>
-	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="BancoPatio"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[YmFuY29wYXRpby5jaGVja2xpc3RfbW90b2NpY2xldGEgLDExOCwxNSw5ZGU4MTc4ZS0wMzM1LTQx
+MjQtODE2OC01ZmRkYmQ5OWRlYzQ7YmFuY29wYXRpby5jb21idXN0aXZlbCAsMTUsODA5LDExMjll
+YTg1LThmZGEtNDRiNy05NDJjLTkxZGIwYWQ2MzZiZjtiYW5jb3BhdGlvLnBuZXVzX3N0YXR1cyAs
+Mjk4LDgzNSwzY2EzOGViZS1mMDllLTRiMWUtODAyOS0yYTMyZWIyYjA0YjQ7]]>
+	</property> 
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="src\main\resources\DataAdapter.xml"/>
 	<import value="net.sf.jasperreports.engine.data.*"/>
 	<style name="table">
 		<box>
@@ -59,212 +64,398 @@
 	</style>
 	<parameter name="placa" class="java.lang.String" nestedType="java.lang.String"/>
 	<queryString>
-		<![CDATA[select *
-from   bancopatio.checklist_motocicleta 
-where  placa  LIKE   $P{placa}]]>
+		<![CDATA[SELECT bancopatio.checklist_motocicleta.tanque,
+	bancopatio.checklist_motocicleta.protecao_frontal,
+	bancopatio.checklist_motocicleta.retrovisor_dir,
+	bancopatio.checklist_motocicleta.retrovisor_esq,
+	bancopatio.checklist_motocicleta.farol,
+	bancopatio.checklist_motocicleta.banco,
+	bancopatio.checklist_motocicleta.pneu_dianteiro,
+	bancopatio.checklist_motocicleta.pneu_traseiro,
+	bancopatio.checklist_motocicleta.bengala,
+	bancopatio.checklist_motocicleta.freio,
+	bancopatio.checklist_motocicleta.carenagem_dir,
+	bancopatio.checklist_motocicleta.carenagem_esq,
+	bancopatio.checklist_motocicleta.suporte_placa,
+	bancopatio.checklist_motocicleta.motor,
+	bancopatio.checklist_motocicleta.farolete,
+	bancopatio.checklist_motocicleta.seta_dir,
+	bancopatio.checklist_motocicleta.seta_esq,
+	bancopatio.checklist_motocicleta.escapamento,
+	bancopatio.checklist_motocicleta.roda_traseira,
+	bancopatio.checklist_motocicleta.roda_dianteira,
+	bancopatio.checklist_motocicleta.observacao,
+	bancopatio.checklist_motocicleta.solicitante,
+	bancopatio.checklist_motocicleta.proprietario,
+	bancopatio.checklist_motocicleta.veiculo,
+	bancopatio.checklist_motocicleta.chassi,
+	bancopatio.checklist_motocicleta.local,
+	bancopatio.checklist_motocicleta.`atravesDE`,
+	bancopatio.checklist_motocicleta.telefone,
+	bancopatio.checklist_motocicleta.entrada,
+	bancopatio.checklist_motocicleta.renavam,
+	bancopatio.checklist_motocicleta.bairro,
+	bancopatio.checklist_motocicleta.guincho,
+	bancopatio.checklist_motocicleta.cpf_cnpj,
+	bancopatio.checklist_motocicleta.cor,
+	bancopatio.checklist_motocicleta.produto,
+	bancopatio.checklist_motocicleta.cidade,
+	bancopatio.checklist_motocicleta.placa,
+	bancopatio.checklist_motocicleta.uf,
+	bancopatio.checklist_motocicleta.documento,
+	bancopatio.checklist_motocicleta.bagagito,
+	bancopatio.checklist_motocicleta.retrovisor_eletrico,
+	bancopatio.checklist_motocicleta.retrovisor_comum,
+	bancopatio.checklist_motocicleta.farois_auxiliares,
+	bancopatio.checklist_motocicleta.rodas_comum,
+	bancopatio.checklist_motocicleta.rodas_de_liga,
+	bancopatio.checklist_motocicleta.radio_toca_cds,
+	bancopatio.checklist_motocicleta.amplificador,
+	bancopatio.checklist_motocicleta.mata_cachorro,
+	bancopatio.checklist_motocicleta.buzinas,
+	bancopatio.checklist_motocicleta.bateria,
+	bancopatio.checklist_motocicleta.alarme,
+	bancopatio.checklist_motocicleta.empresa,
+	bancopatio.checklist_motocicleta.foto,
+	bancopatio.checklist_motocicleta.foto_2,
+	bancopatio.checklist_motocicleta.foto_3,
+	bancopatio.checklist_motocicleta.foto_4,
+	bancopatio.checklist_motocicleta.foto_5,
+	bancopatio.checklist_motocicleta.motocicleta,
+	bancopatio.checklist_motocicleta.combustivel,
+	bancopatio.checklist_motocicleta.pneus_status,
+	bancopatio.checklist_motocicleta.assinatura_vistoriador,
+	bancopatio.checklist_motocicleta.assinatura_policial,
+	bancopatio.checklist_motocicleta.foto_6,
+	bancopatio.checklist_motocicleta.foto_7,
+	bancopatio.checklist_motocicleta.foto_8
+FROM bancopatio.checklist_motocicleta
+WHERE 
+	 bancopatio.checklist_motocicleta.placa LIKE $P{placa}]]>
 	</queryString>
 	<field name="tanque" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="tanque"/>
 		<property name="com.jaspersoft.studio.field.label" value="tanque"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="protecao_frontal" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="protecao_frontal"/>
 		<property name="com.jaspersoft.studio.field.label" value="protecao_frontal"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="retrovisor_dir" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="retrovisor_dir"/>
 		<property name="com.jaspersoft.studio.field.label" value="retrovisor_dir"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="retrovisor_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="retrovisor_esq"/>
 		<property name="com.jaspersoft.studio.field.label" value="retrovisor_esq"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="farol" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="farol"/>
 		<property name="com.jaspersoft.studio.field.label" value="farol"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="banco" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="banco"/>
 		<property name="com.jaspersoft.studio.field.label" value="banco"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="pneu_dianteiro" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="pneu_dianteiro"/>
 		<property name="com.jaspersoft.studio.field.label" value="pneu_dianteiro"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="pneu_traseiro" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="pneu_traseiro"/>
 		<property name="com.jaspersoft.studio.field.label" value="pneu_traseiro"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="bengala" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="bengala"/>
 		<property name="com.jaspersoft.studio.field.label" value="bengala"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="freio" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="freio"/>
 		<property name="com.jaspersoft.studio.field.label" value="freio"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="carenagem_dir" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="carenagem_dir"/>
 		<property name="com.jaspersoft.studio.field.label" value="carenagem_dir"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="carenagem_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="carenagem_esq"/>
 		<property name="com.jaspersoft.studio.field.label" value="carenagem_esq"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="suporte_placa" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="suporte_placa"/>
 		<property name="com.jaspersoft.studio.field.label" value="suporte_placa"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="motor" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="motor"/>
 		<property name="com.jaspersoft.studio.field.label" value="motor"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="farolete" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="farolete"/>
 		<property name="com.jaspersoft.studio.field.label" value="farolete"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="seta_dir" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="seta_dir"/>
 		<property name="com.jaspersoft.studio.field.label" value="seta_dir"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="seta_esq" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="seta_esq"/>
 		<property name="com.jaspersoft.studio.field.label" value="seta_esq"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="escapamento" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="escapamento"/>
 		<property name="com.jaspersoft.studio.field.label" value="escapamento"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="roda_traseira" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="roda_traseira"/>
 		<property name="com.jaspersoft.studio.field.label" value="roda_traseira"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="roda_dianteira" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="roda_dianteira"/>
 		<property name="com.jaspersoft.studio.field.label" value="roda_dianteira"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="observacao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="observacao"/>
 		<property name="com.jaspersoft.studio.field.label" value="observacao"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="solicitante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="solicitante"/>
 		<property name="com.jaspersoft.studio.field.label" value="solicitante"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="proprietario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="proprietario"/>
 		<property name="com.jaspersoft.studio.field.label" value="proprietario"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="veiculo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="veiculo"/>
 		<property name="com.jaspersoft.studio.field.label" value="veiculo"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="chassi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="chassi"/>
 		<property name="com.jaspersoft.studio.field.label" value="chassi"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="local" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="local"/>
 		<property name="com.jaspersoft.studio.field.label" value="local"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="atravesDE" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="atravesDE"/>
 		<property name="com.jaspersoft.studio.field.label" value="atravesDE"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="telefone" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="telefone"/>
 		<property name="com.jaspersoft.studio.field.label" value="telefone"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="entrada" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="entrada"/>
 		<property name="com.jaspersoft.studio.field.label" value="entrada"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="renavam" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="renavam"/>
 		<property name="com.jaspersoft.studio.field.label" value="renavam"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="bairro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="bairro"/>
 		<property name="com.jaspersoft.studio.field.label" value="bairro"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="guincho" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="guincho"/>
 		<property name="com.jaspersoft.studio.field.label" value="guincho"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="cpf_cnpj" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cpf_cnpj"/>
 		<property name="com.jaspersoft.studio.field.label" value="cpf_cnpj"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="cor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cor"/>
 		<property name="com.jaspersoft.studio.field.label" value="cor"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="produto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="produto"/>
 		<property name="com.jaspersoft.studio.field.label" value="produto"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="cidade" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="cidade"/>
 		<property name="com.jaspersoft.studio.field.label" value="cidade"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="placa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="placa"/>
 		<property name="com.jaspersoft.studio.field.label" value="placa"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="uf" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="uf"/>
 		<property name="com.jaspersoft.studio.field.label" value="uf"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="documento" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="documento"/>
 		<property name="com.jaspersoft.studio.field.label" value="documento"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="bagagito" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="bagagito"/>
 		<property name="com.jaspersoft.studio.field.label" value="bagagito"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="retrovisor_eletrico" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="retrovisor_eletrico"/>
 		<property name="com.jaspersoft.studio.field.label" value="retrovisor_eletrico"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="retrovisor_comum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="retrovisor_comum"/>
 		<property name="com.jaspersoft.studio.field.label" value="retrovisor_comum"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="farois_auxiliares" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="farois_auxiliares"/>
 		<property name="com.jaspersoft.studio.field.label" value="farois_auxiliares"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="rodas_comum" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rodas_comum"/>
 		<property name="com.jaspersoft.studio.field.label" value="rodas_comum"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="rodas_de_liga" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="rodas_de_liga"/>
 		<property name="com.jaspersoft.studio.field.label" value="rodas_de_liga"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="radio_toca_cds" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="radio_toca_cds"/>
 		<property name="com.jaspersoft.studio.field.label" value="radio_toca_cds"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="amplificador" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="amplificador"/>
 		<property name="com.jaspersoft.studio.field.label" value="amplificador"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="mata_cachorro" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="mata_cachorro"/>
 		<property name="com.jaspersoft.studio.field.label" value="mata_cachorro"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="buzinas" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="buzinas"/>
 		<property name="com.jaspersoft.studio.field.label" value="buzinas"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="bateria" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="bateria"/>
 		<property name="com.jaspersoft.studio.field.label" value="bateria"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<field name="alarme" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="alarme"/>
 		<property name="com.jaspersoft.studio.field.label" value="alarme"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="empresa" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="empresa"/>
+		<property name="com.jaspersoft.studio.field.label" value="empresa"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto_2" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto_2"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto_2"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto_3" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto_3"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto_3"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto_4" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto_4"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto_4"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto_5" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto_5"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto_5"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="motocicleta" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="motocicleta"/>
+		<property name="com.jaspersoft.studio.field.label" value="motocicleta"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="combustivel" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="combustivel"/>
+		<property name="com.jaspersoft.studio.field.label" value="combustivel"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="pneus_status" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="pneus_status"/>
+		<property name="com.jaspersoft.studio.field.label" value="pneus_status"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="assinatura_vistoriador" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="assinatura_vistoriador"/>
+		<property name="com.jaspersoft.studio.field.label" value="assinatura_vistoriador"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="assinatura_policial" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="assinatura_policial"/>
+		<property name="com.jaspersoft.studio.field.label" value="assinatura_policial"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto_6" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto_6"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto_6"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto_7" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto_7"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto_7"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
+	</field>
+	<field name="foto_8" class="byte[]">
+		<property name="com.jaspersoft.studio.field.name" value="foto_8"/>
+		<property name="com.jaspersoft.studio.field.label" value="foto_8"/>
 		<property name="com.jaspersoft.studio.field.tree.path" value="checklist_motocicleta"/>
 	</field>
 	<title>
@@ -415,31 +606,31 @@ where  placa  LIKE   $P{placa}]]>
 	<pageHeader>
 		<band height="54" splitType="Prevent">
 			<staticText>
-				<reportElement x="19" y="18" width="61" height="28" uuid="42653a83-3346-47c1-a208-a34449e63cca"/>
+				<reportElement x="0" y="10" width="71" height="28" uuid="42653a83-3346-47c1-a208-a34449e63cca"/>
 				<text><![CDATA[(1) Avariado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="80" y="18" width="60" height="28" uuid="f33a44b6-7cb4-4467-9ce4-fceb29b88701"/>
+				<reportElement x="80" y="10" width="60" height="28" uuid="f33a44b6-7cb4-4467-9ce4-fceb29b88701"/>
 				<text><![CDATA[(2) Riscado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="140" y="18" width="50" height="28" uuid="1a95a8af-b654-4370-a120-152f9bf064da"/>
+				<reportElement x="148" y="10" width="50" height="28" uuid="1a95a8af-b654-4370-a120-152f9bf064da"/>
 				<text><![CDATA[(3) Falta]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="190" y="18" width="60" height="28" uuid="cdcc935a-2f59-4338-82cd-6e5c03c47fcf"/>
+				<reportElement x="200" y="10" width="75" height="28" uuid="cdcc935a-2f59-4338-82cd-6e5c03c47fcf"/>
 				<text><![CDATA[(4) Quebrado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="250" y="18" width="60" height="28" uuid="74e6e527-d541-41de-8e35-4669c27c1a6b"/>
+				<reportElement x="280" y="10" width="66" height="28" uuid="74e6e527-d541-41de-8e35-4669c27c1a6b"/>
 				<text><![CDATA[(5) Trincado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="310" y="18" width="70" height="28" uuid="7e6af647-2039-4887-9cc7-dbd6f3a383f3"/>
+				<reportElement x="346" y="10" width="70" height="28" uuid="7e6af647-2039-4887-9cc7-dbd6f3a383f3"/>
 				<text><![CDATA[(6) Amassado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="380" y="18" width="110" height="28" uuid="f72e1c18-fcd0-4432-80ee-98a01583d69c"/>
+				<reportElement x="430" y="10" width="120" height="28" uuid="f72e1c18-fcd0-4432-80ee-98a01583d69c"/>
 				<text><![CDATA[(7) Impossivel Vistoriar]]></text>
 			</staticText>
 		</band>
@@ -447,47 +638,57 @@ where  placa  LIKE   $P{placa}]]>
 	<columnHeader>
 		<band height="295" splitType="Stretch">
 			<image>
-				<reportElement x="20" y="-10" width="530" height="280" uuid="28a74267-98ac-4e92-8e66-4fcfd83bfdf1"/>
+				<reportElement x="20" y="-10" width="400" height="280" uuid="28a74267-98ac-4e92-8e66-4fcfd83bfdf1"/>
 				<imageExpression><![CDATA["motocicleta.jpg"]]></imageExpression>
 			</image>
 			<textField>
-				<reportElement x="383" y="34" width="17" height="15" uuid="8706dace-7050-48fe-a6ad-c97c124c1eef"/>
+				<reportElement x="377" y="36" width="17" height="15" uuid="8706dace-7050-48fe-a6ad-c97c124c1eef"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{seta_dir} == null ? " " :  $F{seta_dir}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="303" y="10" width="17" height="15" uuid="75aca7c3-b1a0-4d57-9183-31322e8d2df2"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{protecao_frontal} == null ? " " :  $F{protecao_frontal}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="383" y="80" width="17" height="15" uuid="9b55892f-2444-4c45-bf3f-be623ba016b1"/>
+				<reportElement x="376" y="79" width="17" height="15" uuid="9b55892f-2444-4c45-bf3f-be623ba016b1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{farol} == null  ? " " :  $F{farol}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="383" y="110" width="11" height="15" uuid="529a54e3-5ea3-499f-82cb-05c35505de89"/>
+				<reportElement x="376" y="110" width="18" height="15" uuid="529a54e3-5ea3-499f-82cb-05c35505de89"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$F{carenagem_dir} == null ? " " :  $F{carenagem_dir}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="380" y="170" width="17" height="15" uuid="63ea4280-2d21-46be-a3de-46174c9d513c"/>
+				<reportElement x="376" y="175" width="17" height="15" uuid="63ea4280-2d21-46be-a3de-46174c9d513c"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{pneu_dianteiro} == null ? " " : $F{pneu_dianteiro}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="315" y="240" width="17" height="15" uuid="05d3453c-74d8-4c28-8d2b-4eaea96c098b"/>
+				<reportElement x="310" y="240" width="17" height="15" uuid="05d3453c-74d8-4c28-8d2b-4eaea96c098b"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
 				<textFieldExpression><![CDATA[$F{freio} == null ? " " : $F{freio}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="277" y="240" width="17" height="15" uuid="e5710f36-a9df-4878-8007-79fd323ef89c"/>
+				<reportElement x="270" y="240" width="17" height="15" uuid="e5710f36-a9df-4878-8007-79fd323ef89c"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{bengala}  == null ? " " : $F{bengala}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="212" y="240" width="17" height="15" uuid="e0ef70c3-a30b-4e25-8ebd-d6db15d40dbc"/>
+				<reportElement x="208" y="240" width="17" height="15" uuid="e0ef70c3-a30b-4e25-8ebd-d6db15d40dbc"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{motor} == null ? " " : $F{motor}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="180" y="240" width="17" height="15" uuid="2c8090fe-bf15-41af-ab7f-4639cd2021f0"/>
+				<reportElement x="173" y="240" width="17" height="15" uuid="2c8090fe-bf15-41af-ab7f-4639cd2021f0"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{carenagem_dir} == null ? " " : $F{carenagem_dir}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="63" y="240" width="17" height="15" uuid="c054a817-55f4-4a5b-b281-84855ea4b4d8"/>
+				<reportElement x="60" y="240" width="17" height="15" uuid="c054a817-55f4-4a5b-b281-84855ea4b4d8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{pneu_traseiro} == null ? " " : $F{pneu_traseiro}]]></textFieldExpression>
 			</textField>
 			<textField>
@@ -495,33 +696,174 @@ where  placa  LIKE   $P{placa}]]>
 				<textFieldExpression><![CDATA[$F{roda_traseira} == null ? " "  : $F{roda_traseira}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="155" width="17" height="15" uuid="ea0bea16-e01f-46fd-91a4-5fd15e47770d"/>
+				<reportElement x="46" y="155" width="17" height="15" uuid="ea0bea16-e01f-46fd-91a4-5fd15e47770d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{escapamento} == null ? " " : $F{escapamento}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="108" y="10" width="17" height="15" uuid="9951eec6-2184-4856-b9db-6670d145f781"/>
+				<reportElement x="106" y="11" width="19" height="15" uuid="9951eec6-2184-4856-b9db-6670d145f781"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{banco} == null ? " " : $F{banco}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="203" y="10" width="17" height="15" uuid="9caa86bf-167a-4d96-b1c6-db4a6aa8465f"/>
+				<reportElement x="198" y="10" width="17" height="15" uuid="9caa86bf-167a-4d96-b1c6-db4a6aa8465f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{tanque}  == null ? " " : $F{tanque}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="110" width="21" height="15" uuid="68518b2d-7ee2-4e46-84cf-9616398456b8"/>
+				<reportElement x="46" y="110" width="21" height="15" uuid="68518b2d-7ee2-4e46-84cf-9616398456b8"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{suporte_placa}  == null ? " " : $F{suporte_placa}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="70" width="17" height="15" uuid="f131e110-aa43-4085-96c5-8f3459aaafc1"/>
+				<reportElement x="48" y="72" width="17" height="15" uuid="f131e110-aa43-4085-96c5-8f3459aaafc1"/>
+				<textElement textAlignment="Center"/>
 				<textFieldExpression><![CDATA[$F{farolete} == null ? " " :  $F{farolete}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="269" y="10" width="17" height="15" uuid="8399e757-4197-44a9-bacb-f2d3f591ec6f"/>
+				<reportElement x="262" y="10" width="17" height="15" uuid="8399e757-4197-44a9-bacb-f2d3f591ec6f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{retrovisor_dir} == null ? " " :  $F{retrovisor_dir}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="230" y="10" width="17" height="15" uuid="3c4b2776-e0fd-4910-a932-988a60535b8f"/>
+				<reportElement x="220" y="10" width="17" height="15" uuid="3c4b2776-e0fd-4910-a932-988a60535b8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
 				<textFieldExpression><![CDATA[$F{retrovisor_esq} == null ? " " : $F{retrovisor_esq}]]></textFieldExpression>
 			</textField>
+			<rectangle>
+				<reportElement x="450" y="0" width="105" height="79" uuid="77ac6c6a-99f6-45c2-9841-ed59bec35de5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="450" y="0" width="105" height="31" uuid="397cc95a-4245-4152-bc41-810171614aac"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="466" y="10" width="72" height="16" uuid="7bacd5da-e591-4c13-b177-0fd8bdaa53bc"/>
+				<text><![CDATA[COMBUSTÍVEL]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="492" y="31" width="20" height="24" uuid="73081647-20cf-4ec9-8e28-cf113713e86d"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="450" y="31" width="20" height="24" uuid="5207a079-0bf0-451f-9ca2-dd4019ecde66"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="470" y="31" width="22" height="24" uuid="439f3cfb-5a70-49d8-bb9d-60feb5f686e6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="535" y="31" width="20" height="24" uuid="a7cb23d8-5e24-4917-bb73-e2c923278ff0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="512" y="31" width="23" height="24" uuid="07b78536-df7e-4056-9924-17ff0bd600d1"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="450" y="55" width="20" height="24" uuid="6409f7dc-1bee-4d69-9892-fcd5ded4a875"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="470" y="55" width="22" height="24" uuid="1099c215-8cb5-4c3a-85b4-9c56ac5ea8e6"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="492" y="55" width="20" height="24" uuid="6344353d-cb93-4c2c-a3ee-56d6288fb1d4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="512" y="55" width="24" height="24" uuid="f986d7ea-a1e5-4de9-8571-9d8079fd9ab2"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="535" y="55" width="20" height="24" uuid="28473b9c-e516-405b-b8b2-5a1d78271660"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="453" y="60" width="17" height="16" uuid="b5641ccc-5084-49bc-ad1f-87a968c26fce"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[R]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="472" y="60" width="20" height="20" uuid="31f7986e-d978-4b76-93dd-6a99e6f42b48"/>
+				<text><![CDATA[1/4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="493" y="60" width="19" height="19" uuid="7bed0a48-5862-48ca-8cb1-be51fbb7a644"/>
+				<text><![CDATA[1/2]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="514" y="61" width="21" height="18" uuid="5bdbded9-718b-4c49-bf61-f6cc815c0e1f"/>
+				<text><![CDATA[3/4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="538" y="59" width="14" height="17" uuid="63520602-a8a7-48ef-8c37-0e3a9118f388"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[C]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="452" y="40" width="20" height="15" uuid="edf3758c-d21c-4e45-a277-9410417137b8"/>
+				<textFieldExpression><![CDATA[$F{combustivel}  == $F{uf}.valueOf( "R" ) ? "X ": ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="471" y="40" width="20" height="15" uuid="8de6338e-46d1-4ab3-86b3-c2d8f3f55d6a"/>
+				<textFieldExpression><![CDATA[$F{combustivel}  ==  $F{uf}.valueOf( "1/4" ) ? " X": ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="492" y="40" width="20" height="15" uuid="f165c30e-5cb2-43c9-a5a8-b94325b76745"/>
+				<textFieldExpression><![CDATA[$F{combustivel}  ==  $F{uf}.valueOf( "1/2" )? " X": ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="514" y="40" width="20" height="15" uuid="6fb1be2d-1679-46b5-ab5b-633a674f4d56"/>
+				<textFieldExpression><![CDATA[$F{combustivel}  == $F{uf}.valueOf( "3/4" ) ? "X ": ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="535" y="40" width="20" height="15" uuid="1a1e3442-af84-4a12-bfe0-473821ff96d5"/>
+				<textFieldExpression><![CDATA[$F{combustivel}  ==  $F{uf}.valueOf( "C" ) ? "X ": ""]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="455" y="142" width="100" height="28" uuid="b10c1e8a-4de5-4118-b634-a7d1b1c2eb7b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="490" y="150" width="42" height="20" uuid="5736bb31-6fcd-417e-a385-29574192fee8"/>
+				<text><![CDATA[PNEUS]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="455" y="170" width="100" height="60" uuid="ee8997f7-5c62-43f0-9b64-9fd583500780"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="170" width="100" height="30" uuid="f3fcf3fe-d18b-48bf-9fa7-fc54934525a0"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="455" y="170" width="35" height="30" uuid="cb57f10d-42c1-4b29-ba80-e203c0bcdd01"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="519" y="170" width="36" height="30" uuid="9a770538-92a3-4f50-bbfe-446fe5eef7b5"/>
+			</rectangle>
+			<textField>
+				<reportElement x="460" y="175" width="25" height="25" uuid="619dd588-6c85-4492-9398-ab17a6733af9"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pneus_status} ==  $F{uf}.valueOf( "N" ) ? "X ": ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="526" y="175" width="23" height="21" uuid="f2526676-7e08-4559-be9c-d8c82b2f110f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pneus_status}  ==  $F{uf}.valueOf( "R" ) ? "X" : ""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="495" y="175" width="21" height="25" uuid="2247fd64-b6eb-40cd-a3c9-ceacd32c7114"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{pneus_status}  ==  $F{uf}.valueOf( "B" ) ?"X" : ""]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="455" y="200" width="35" height="30" uuid="7010ae8e-bcce-4847-b973-a1d7e148e9d4"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="519" y="200" width="36" height="30" uuid="eced5bbd-873e-4f45-9de1-beef35589e7b"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="466" y="210" width="13" height="16" uuid="17e3ec15-0fcb-47df-8771-7de4b9619190"/>
+				<text><![CDATA[N]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="499" y="210" width="13" height="21" uuid="40e331ab-b693-44a1-95c5-a93552099de5"/>
+				<text><![CDATA[B]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="529" y="210" width="15" height="20" uuid="4ff88dfd-b2a3-42f6-8abc-c398df206c6e"/>
+				<text><![CDATA[R]]></text>
+			</staticText>
 		</band>
 	</columnHeader>
 	<columnFooter>
@@ -629,7 +971,33 @@ where  placa  LIKE   $P{placa}]]>
 		</band>
 	</columnFooter>
 	<pageFooter>
-		<band height="42" splitType="Prevent"/>
+		<band height="130" splitType="Prevent">
+			<rectangle>
+				<reportElement x="23" y="10" width="489" height="58" uuid="bf021b8a-3673-4ac5-8192-c28ee0f4f0c2"/>
+			</rectangle>
+			<textField>
+				<reportElement x="60" y="20" width="435" height="40" uuid="a84988f8-0edb-45a5-a68b-f28f6958cce8"/>
+				<textFieldExpression><![CDATA[$F{observacao} == null ? " " : $F{observacao}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement x="23" y="80" width="197" height="50" uuid="f9d43d60-f11a-4946-a9e8-dc271302c76b"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="310" y="80" width="201" height="50" uuid="0e1f070b-8831-4cd4-b39a-434e42b0e633"/>
+			</rectangle>
+			<textField>
+				<reportElement x="331" y="94" width="154" height="30" uuid="7e673f40-732b-4f21-9fb3-17c795e35db6"/>
+				<textFieldExpression><![CDATA[$F{assinatura_policial} == null ? " " : $F{assinatura_policial}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="90" width="140" height="30" uuid="b722ec77-ead7-428d-9176-dad958de54fe"/>
+				<textFieldExpression><![CDATA[$F{assinatura_vistoriador}== null ? " " : $F{assinatura_vistoriador}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="28" y="20" width="32" height="30" uuid="f1124940-07dc-4b46-a191-3b8809c16d61"/>
+				<text><![CDATA[Obs:]]></text>
+			</staticText>
+		</band>
 	</pageFooter>
 	<summary>
 		<band height="35" splitType="Prevent"/>

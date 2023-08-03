@@ -91,7 +91,7 @@ public class RetiraVeiculoService {
 	
 	public File findByRelatorio(String placa, String email) throws JRException, SQLException, IOException {
         CheckListMotocicletaEntity resultMotocicleta = checklistMotocicletaRepository.findByPlaca(placa);
-        CheckListAutomovelEntity resultAutomovel = checklistAutomovelRepository.findByPlaca(placa);
+		CheckListAutomovelEntity resultAutomovel = checklistAutomovelRepository.findByPlaca(placa);
         if(resultMotocicleta!= null) {
     	   if(email != null) {
     		   return checklistMotocicletaService.findByPlacaAndEmail(placa, email);
@@ -129,7 +129,7 @@ public class RetiraVeiculoService {
     		   return test;
         }
         else {
-    	    Object resultAutomovel = checklistAutomovelRepository.findByPlaca(placa);
+        	Object resultAutomovel = checklistAutomovelRepository.findByPlaca(placa);
  		  if( resultAutomovel != null) {
  			 return  resultAutomovel;
  		  }

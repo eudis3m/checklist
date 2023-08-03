@@ -4,13 +4,13 @@ import java.io.File;
 
 public class FileDto {
 
-	private File download;
+	private String download;
 
-	public File getDownload() {
+	public String getDownload() {
 		return download;
 	}
 
-	public void setDownload(File download) {
-		this.download = download;
+	public void setDownload(String pdfExport) {
+		this.download = pdfExport;
 	}
 }
